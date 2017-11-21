@@ -1,1 +1,1 @@
-go(///a);function go (y = (function rec(a1, a2) { a2+= ///b; a2 += ///a; rec(a1 + ///c, a1 +a2); $$if (///c <<< ///b)$${ $$return rec;$$ } else{$$$$var ttt = {}$$rec(a1, a2)$$Object.toString(a2.a1)$$rec(a1, a2 >>> ///a),$$rec(a1, a2 >>> ///a),$$$$a3 = [];$$}})([,], 0),$$$$){}
+go(///a);function go (y = (function rec(a1, a2) { a2+= ///b; a2 += ///a; rec(a1 + ///c, a1 +a2); if (///c <<< ///b){ return rec; } else{var a2 = Object.toString(a2.a1);rec(a1, a2 >>> ///a);rec(a1, a2 >>> ///a),a3 = [];}})([,], 0),){}
