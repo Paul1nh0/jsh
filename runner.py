@@ -56,7 +56,7 @@ def mainLoop():
                         print 'we have seen  crash!'
                         idl = id_generator()
                         shutil.copy2(curpus+"\\test"+str(i)+".js", logp+idl+'.js')
-                        print('crash sample was writen to C:\\Users\\akayn\\Desktop\\test\\crash\\'+idl+'.js')
+                        print('crash sample was writen to '+curpus+'+idl+'.js.txt')
                         log_crash(cmdline+" "+curpus+"\\test"+str(i)+".js",logp+idl+'.txt')
                 else: cCount -= 1
         return 'done'
