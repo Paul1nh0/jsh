@@ -1,0 +1,5 @@
+PATH=C:\\Users\\akayn\\Desktop\\jsf\\
+BINCMDLINE=d8.exe --allow-natives-syntax --wasm-opt 
+BINPATH=F:\\fuzzing\\asan-win32-release-514498
+CURPUS=C:\\Users\\akayn\\Desktop\\test
+LOG=C:\\Users\\akayn\\Desktop\\test\\crash\\

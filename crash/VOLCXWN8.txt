@@ -1,0 +1,67 @@
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+false
+[object global]
+a
+null
+true
+32
+onot87gmv==-
+[object global]
+666905.4448493933
+onot87gmv==-
+[object global]
+null
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+undefined
+
+32
+a
+68719476732
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+32
+false
+
+false
+[object global]
+68719476732
+false
+32
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBBCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+666905.4448493933
+false
+68719476732
+false
+a
+true
+undefined
+
+onot87gmv==-
+undefined
+
+
+
+#
+# Fatal error in , line 0
+# API fatal error handler returned after process out of memory
+#
+
+==== C stack trace ===============================
+
+	v8::base::debug::StackTrace::StackTrace [0x031D2274+20] (C:\b\c\b\win_asan_release\src\v8\src\base\debug\stack_trace_win.cc:177)
+	v8::platform::`anonymous namespace'::PrintStackTrace [0x02EE2CB1+305] (C:\b\c\b\win_asan_release\src\v8\src\libplatform\default-platform.cc:25)
+	V8_Fatal [0x02ED16FF+239] (C:\b\c\b\win_asan_release\src\v8\src\base\logging.cc:137)
+	v8::internal::V8::FatalProcessOutOfMemory [0x01023FAA+730] (C:\b\c\b\win_asan_release\src\v8\src\api.cc:319)
+	v8::internal::EvacuateNewSpaceVisitor::Visit [0x01E1A980+1792] (C:\b\c\b\win_asan_release\src\v8\src\heap\mark-compact.cc:1634)
+	v8::internal::LiveObjectVisitor::VisitBlackObjectsNoFail<v8::internal::EvacuateNewSpaceVisitor,v8::internal::MajorNonAtomicMarkingState> [0x01DEB83C+1740] (C:\b\c\b\win_asan_release\src\v8\src\heap\mark-compact.cc:3722)
+	v8::internal::FullEvacuator::RawEvacuatePage [0x01DEAE40+336] (C:\b\c\b\win_asan_release\src\v8\src\heap\mark-compact.cc:3266)
+	v8::internal::Evacuator::EvacuatePage [0x01DEA899+329] (C:\b\c\b\win_asan_release\src\v8\src\heap\mark-compact.cc:3213)
+	v8::internal::PageEvacuationTask::RunInParallel [0x01E229A4+388] (C:\b\c\b\win_asan_release\src\v8\src\heap\mark-compact.cc:3391)
+	v8::internal::ItemParallelJob::Task::RunInternal [0x01D40B0D+45] (C:\b\c\b\win_asan_release\src\v8\src\heap\item-parallel-job.h:98)
+	v8::platform::WorkerThread::Run [0x02F0A369+105] (C:\b\c\b\win_asan_release\src\v8\src\libplatform\worker-thread.cc:27)
+	v8::base::ThreadEntry [0x02ED6CFB+75] (C:\b\c\b\win_asan_release\src\v8\src\base\platform\platform-win32.cc:1278)
+	thread_start<unsigned int (__stdcall*)(void *)> [0x032164D8+88] (minkernel\crts\ucrt\src\appcrt\startup\thread.cpp:115)
+	__asan::AsanThread::ThreadStart [0x031E3FD2+146] (c:\b\rr\tmpgjfswy\w\src\third_party\llvm\projects\compiler-rt\lib\asan\asan_thread.cc:267)
+	asan_thread_start [0x031E2C6E+30] (c:\b\rr\tmpgjfswy\w\src\third_party\llvm\projects\compiler-rt\lib\asan\asan_win.cc:137)
+	BaseThreadInitThunk [0x772C8654+36]
+	RtlGetAppContainerNamedObjectPath [0x77EA4A47+311]
+	RtlGetAppContainerNamedObjectPath [0x77EA4A17+263]
