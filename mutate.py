@@ -237,7 +237,7 @@ with open(os.getcwd()+'\\mutation\\formula.txt', 'w') as lm:
     lm.write(ln)
 
 print('found a different valid formula, done mutating sample..')
-os.remove('C:\\Users\\akayn\\Desktop\\jsf\\mutation\\temp.js')
+os.remove(os.getcwd()+'\\mutation\\temp.js')
 
 
 
