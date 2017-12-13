@@ -116,5 +116,11 @@ funny thing is i got also this responce (clarifying that this indeed a security 
 ![](pics/ns1.PNG)
 ![](pics/sn2.PNG)
 
+# Summery
+to summ up i woke up to latest patch tuesday with both my bugs fixed. i have lost my bounty that could have helped mr a lot in life. i have lost my senity handling the case directly with msrc. i have lost my acknowledgment for my hard work and efforts.
+
+# TimeLine:
+
+
 
 
