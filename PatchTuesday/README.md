@@ -176,9 +176,9 @@ to sum up i woke up to latest patch tuesday with both my bugs fixed. i have lost
 
   * 17-10-2017 - vulnerability found
   * 17-10-2017 - vulnerability reported to vendor got initial triage (18).
-  * 26-10-2017 - submitted to a third side party bounty program.
   * 18-10-2017 - 15-11-2017 - desperately tried to send additional details to msrc.
-  * 15-11-2017 - finally i was responded with acknowledgment of exploitability and a fix pursue by msrc.
+  * 26-10-2017 - submitted to a third side party bounty program.
+  * 15-11-2017 - finally i was responded with acknowledgment of exploitability and a fix pursue by msrc (after contacting @krzywix).
   * 21-11-2017 - recived a decent bounty offer - that i had to decline.
   * 12-12-2017 - vulnerability fixed, without credit or bounty.
 
