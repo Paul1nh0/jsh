@@ -49,6 +49,7 @@ at this point i was really stressed out becouse i have in hand an exploitable me
 
 at this point i have seen on twitter this thread:
 <html><a href="https://twitter.com/berendjanwever/status/929328331899666434">https://twitter.com/berendjanwever/status/929328331899666434</a></html><br>
+
 ![](pics/r.PNG)
 
 
