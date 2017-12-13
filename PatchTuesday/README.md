@@ -117,7 +117,7 @@ funny thing is i got also this responce (clarifying that this indeed a security 
 ![](pics/sn2.PNG)
 
 # Summery
-to sum up i woke up to latest patch tuesday with both my bugs fixed. i have lost my bounty that could have helped mr a lot in life. i have lost my sanity handling the case directly with msrc. i have lost my acknowledgment for my hard work and efforts.
+to sum up i woke up to latest patch tuesday with both my bugs fixed. i have lost my bounty that could have helped me a lot in life. i have lost my sanity handling the case directly with msrc. i have lost my acknowledgment for my hard work and efforts.
 
 # TimeLine:
 
