@@ -68,6 +68,8 @@ and then finally after all the mess i got a mail replay thx krzywix (i guess).
 
 ![](pics/rsp1.PNG)
 
+at this time i also got the responce from the third party bounty program who offered a decent bounty ofc i had to decline it becouse it was already reported to the vendor, but just for the referance its about the same time in regards to the responce time and the handling of the case (users wise)..
+
 funny thing is i got also this responce (that will be discussed later):
 
 ![](pics/ns1.PNG)
