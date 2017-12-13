@@ -9,7 +9,15 @@ it was not long before i came across some intersting crash's, but none of them s
 well, i was about to give up, and have stoped my harness. this was the first day stable rs3 was out and i have upgraded my computer. it was also the time of this <html> <a href="https://twitter.com/dwizzzleMSFT/status/920637599449939968">public relations post</a></html> was out. and i decided to give one last longshot to the fuzzer. after running the automation during the night i have noticed one weird crash it looked as if edgehtml was trying to get a length of a url-string from a bogus address way too high to have any meaning. it didnt look exploitable at first but i thought i'd submit this anyway to msrc. like many of my previous submissions to that point i have received a ticket, but till' this day i didnt got any responce. i gave a closer look at the crash and began to see other forms of crash from this sample, some of them looked exploitable at first sight (crashing at memcpy read, or write VA). stupid as i was (the reader will understand later) i have quickly notified msrc about this and i was a little stressed out becouse jugding from my privies expiriance i had very little chance that someone will actually read my emails or take action upon this vulnerability, but on the other hand with a good harness anyone running this fuzzer will probably have better chance than me finding this vulnerability (i only had one machine). including bad people. as always i got a ticket. i continued to research this case and after reducing this test case i was left with this lines:
 
 ```javascript
-var a1 = document.createElementNS("http://www.w3.org/2000/svg", "mpath");                             
-a1.style.setProperty("content", "var(--c)");                         
-var a2 = a1.cloneNode();   
+var a1 = document.createElementNS("http://www.w3.org/2000/svg", "mpath");                   (1)                        
+a1.style.setProperty("content", "var(--c)");                                                (2)                        
+var a2 = a1.cloneNode();                                                                    (3)
 ```
+
+1 -> has to be an mpath element any other will not crash the content provider.
+2 -> can be any variable, but if not set then the content provider will not crash.
+3 -> leads to use of uninitialized heap memory.
+
+
+
+
