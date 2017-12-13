@@ -32,6 +32,6 @@ here are some graphics for the reader:<br><br>
 
 ![](pics/aaa6.PNG)
 
-
+at this point i was really stressed out becouse i have in hand an exploitable memory curroption but i cannot update my details on any of my cases in addition i cant get a singal respoce to any of my reported emails, i have tried desperately to resend the report and got some emails clirafining me what counts as a vulnerability and other none-sense, here are some of them:
 
 
