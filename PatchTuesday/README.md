@@ -30,7 +30,7 @@ i think that the problem is that while the document still do not contain the new
 we can still cast properties. that means that there is likly a problem with the constructor,<br>
 who do not zero out non-existing fields, calling a clone on this object will lead to use of uninitialized variables.<br>
 
-i have also fount different code paths to the same issue that i have identified as a race condition leading to use-of-uninitialized memory (maybe this sample will help):<br>
+i have also found different code paths to the same issue that i have identified as a race condition leading to use-of-uninitialized memory (maybe this sample will help):<br>
 
 ```javascript
 <script>
