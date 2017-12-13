@@ -53,5 +53,9 @@ at this point i have seen on twitter this thread:
 <html><a href="https://twitter.com/berendjanwever/status/929328331899666434">https://twitter.com/berendjanwever/status/929328331899666434</a></html><br>
 
 ![](pics/r.PNG)
+![](pics/msr.PNG)
+
+so i decided to contact he'm:<br>
+
 
 
