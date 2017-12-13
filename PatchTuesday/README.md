@@ -20,6 +20,9 @@ var a2 = a1.cloneNode();                                                        
 
 the crash was as follows:<br><br>
 
+![](pics/curroption,,.PNG)
 
+<br><br>
+where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the privies page that redirected to that page.
 
 
