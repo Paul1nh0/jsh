@@ -14,9 +14,11 @@ a1.style.setProperty("content", "var(--c)");                                    
 var a2 = a1.cloneNode();                                                                    (3)
 ```
 
-1 -> has to be an mpath element any other will not crash the content provider.
-2 -> can be any variable, but if not set then the content provider will not crash.
-3 -> leads to use of uninitialized heap memory.
+1 -> has to be an mpath element any other will not crash the content provider.<br>
+2 -> can be any variable, but if not set then the content provider will not crash.<br>
+3 -> leads to use of uninitialized heap memory.<br><br>
+
+the crash was as follows:<br><br>
 
 
 
