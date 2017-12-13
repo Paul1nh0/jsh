@@ -179,7 +179,7 @@ to sum up i woke up to latest patch tuesday with both my bugs fixed. i have lost
   * 18-10-2017 - 15-11-2017 - desperately tried to send additional details to msrc.
   * 26-10-2017 - submitted to a third side party bounty program.
   * 15-11-2017 - finally i was responded with acknowledgment of exploitability and a fix pursue by msrc (after contacting @krzywix).
-  * 21-11-2017 - recived a decent bounty offer - that i had to decline.
+  * 21-11-2017 - recived a decent bounty offer (FROM THE THIRD PARTY) - that i had to decline.
   * 12-12-2017 - vulnerability fixed, without credit or bounty.
 
 
