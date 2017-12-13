@@ -64,3 +64,12 @@ so i decided to contact he'm:<br><br>
 ![](pics/k5.PNG)
 ![](pics/k6.PNG)
 
+and then finally after all the mess i got a mail replay thx krzywix (i guess).
+
+![](pics/rsp1.PNG)
+
+funny thing is i got also this responce (that will be discussed later):
+
+![](pics/ns1.PNG)
+![](pics/sn2.PNG)
+
