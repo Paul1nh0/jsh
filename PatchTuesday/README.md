@@ -55,7 +55,12 @@ at this point i have seen on twitter this thread:
 ![](pics/r.PNG)
 ![](pics/msr.PNG)
 
-so i decided to contact he'm:<br>
+so i decided to contact he'm:<br><br>
 
-
+![](pics/k1.PNG)
+![](pics/k2.PNG)
+![](pics/k3.PNG)
+![](pics/k4.PNG)
+![](pics/k5.PNG)
+![](pics/k6.PNG)
 
