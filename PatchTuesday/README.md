@@ -181,5 +181,11 @@ to sum up i woke up to latest patch tuesday with both my bugs fixed. i have lost
   * 15-11-2017 - finally i was responded with acknowledgment of exploitability and a fix pursue by msrc (after contacting @krzywix).
   * 21-11-2017 - recived a decent bounty offer (FROM THE THIRD PARTY) - that i had to decline.
   * 12-12-2017 - vulnerability fixed, without credit or bounty.
+  
+# Conclusions
+
+all future vulnerability that i will find in microsoft products will be sent through a third party program.<br>
+Microsoft is a demeaning vendor to independent security researchers not working for high class companies with big audience.<br>
+you can take a look at this thread as a contra-measure: <html><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=669086#c20">#1</a></html><br>
 
 
