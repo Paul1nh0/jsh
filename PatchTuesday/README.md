@@ -84,7 +84,6 @@ var heapOverFlow = document.importNode(uafObject,true);
 
 }
 </script>
-</head>
 <body onload=trigger()>
 <title id="junk" style=" content: var(--cssvard); grid-gap: none; border-left-color: ; orientation: auto" class="class7" loop="1" crossorigin="crossorigin" formmethod="post" cols="0" controls="controls"></title>
 <canvas id="canvas" name="[g1Wvvph^&amp;1S7I" hidden="hidden" dir="ltr" name="" width="0" low="1" placeholder="" onhashchange="" ontransitionend="" frame="BOX">
