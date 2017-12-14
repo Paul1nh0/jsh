@@ -229,7 +229,7 @@ i have lost my bounty that could have helped me a lot in life. i have lost my sa
   * 15-11-2017 - finally i was responded with acknowledgment of exploitability and a fix pursue by msrc (after contacting @krzywix).
   * 21-11-2017 - recived a decent bounty offer (FROM THE THIRD PARTY) - that i had to decline.
   * 12-12-2017 - vulnerability fixed, without credit or bounty.
-  * 12-14-12-2017 - tried to contact msrc via email, tried to contact @krzywix - to get a conformation that the bug is indeed fixed so i can close it on my side, received no reply.
+  * 12-14-12-2017 - tried to contact msrc via email, tried to contact @krzywix - to get a conformation that the bug is indeed fixed so i can close it on my side, received no reply from msrc, @krzywix told me its not he's job.
   
 # Conclusions
 
