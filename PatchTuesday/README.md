@@ -184,7 +184,7 @@ to sum up i woke up to latest patch tuesday with both my bugs fixed. i have lost
   
 # Conclusions
 
-all future vulnerability that i will find in microsoft products will be sent through a third party program.<br>
+all future vulnerability's that i will find (and there are more) in microsoft products will be sent through a third party program.<br>
 Microsoft is a demeaning vendor to independent security researchers not working for high class companies with big audience.<br>
 you can take a look at this thread as a contra-measure: <html><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=669086#c20">#1</a></html><br>
 or this threads: <html><a href="https://twitter.com/klotxl/status/921209998352334850">#2 </a></html> <html><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1324&desc=2#c8">#3 </a></html> <html><a href="https://twitter.com/berendjanwever/status/937798675828535297">#4</a></html><br>
