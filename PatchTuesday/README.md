@@ -233,6 +233,7 @@ i have lost my bounty that could have helped me a lot in life. i have lost my sa
   
 # Conclusions
 
+ * i have helped making the microsoftedge more secure and microsoft to secure there end-users.
  * all future vulnerability's that i will find (and there are more) in microsoft products will be sent through a third party program.<br>
  * Microsoft is a demeaning vendor to independent security researchers not working for high class companies with big audience.<br>
 you can take a look at this thread as a contra-measure: <html><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=669086#c20">#1</a></html><br>
