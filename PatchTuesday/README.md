@@ -165,7 +165,33 @@ funny thing is i got also this responce (clarifying that this indeed a security 
 ![](pics/sn2.PNG)
 
 # Summery
-to sum up i woke up to latest patch tuesday with both my bugs fixed. i have lost my bounty that could have helped me a lot in life. i have lost my sanity handling the case directly with msrc. i have lost my acknowledgment for my hard work and efforts.
+to sum up i woke up to latest patch tuesday with both my bugs fixed.<br><br>
+
+they have added this checks before computing the clone mathods.
+
+```c
+0:019> kn
+ # Child-SP          RetAddr           Call Site
+00 00000009`8abf8148 00007ffe`a6a77211 edgehtml!CAttrValue::Copy
+01 00000009`8abf8150 00007ffe`a6e30475 edgehtml!CAttrArray::Clone+0xf1
+02 00000009`8abf81d0 00007ffe`a6b9ddb3 edgehtml!ApplySubstitutedAttrArrayValues+0x189
+03 00000009`8abf8280 00007ffe`a694a50d edgehtml!CElement::NormalizeAndCacheFormats+0x267053
+04 00000009`8abf82e0 00007ffe`a6948861 edgehtml!CElement::ComputeFormatsVirtual+0x92d
+05 00000009`8abf8970 00007ffe`a6948706 edgehtml!Tree::ElementNode::ComputeFormats+0x121
+06 00000009`8abf8a70 00007ffe`a69dd130 edgehtml!Tree::ElementNode::ComputeFormatsHelper+0x46
+07 00000009`8abf97d0 00007ffe`a690994f edgehtml!CElement::UpdateFormatsForLayout+0x430
+08 00000009`8abf9870 00007ffe`a691beb1 edgehtml!CView::ExecuteInvalidationTasks+0x27f
+09 00000009`8abf99d0 00007ffe`a6a220d5 edgehtml!CView::EnsureView+0x3c1
+0a 00000009`8abf9b10 00007ffe`a6a2204a edgehtml!CElement::EnsureRecalcNotify+0x79
+0b 00000009`8abf9b60 00007ffe`a6997405 edgehtml!CElement::EnsureRecalcNotify+0x1e
+0c 00000009`8abf9ba0 00007ffe`a6846740 edgehtml!CWindow::GetRootClientRect+0x3d
+0d 00000009`8abf9bf0 00007ffe`a699a1d4 edgehtml!CWindow::GetViewportSize+0x30
+0e 00000009`8abf9c50 00007ffe`a699a0f6 edgehtml!COmWindowProxy::Var_get_innerWidth+0xc4
+0f 00000009`8abf9c90 00007ffe`a6b130d5 edgehtml!CFastDOM::CWindow::Trampoline_Get_innerWidth+0x3e
+10 00000009`8abf9cd0 00007ffe`a60199f1 edgehtml!CFastDOM::CWindow::Profiler_Get_innerWidth+0x25
+```
+
+i have lost my bounty that could have helped me a lot in life. i have lost my sanity handling the case directly with msrc. i have lost my acknowledgment for my hard work and efforts.
 
 # TimeLine:
 
