@@ -170,7 +170,7 @@ to sum up i woke up to latest patch tuesday with both my bugs fixed.<br><br>
 you can see that the CDocument is first initialized and only then gets cloned. by CElement::Clone<br> 
 (see the above stack for a referance).
 
-```c
+```assembly
 0:019> kn
  # Child-SP          RetAddr           Call Site
 00 00000009`8abf9040 00007ffe`a6a770a2 edgehtml!CAttrArray::Clone+0xf1
@@ -184,6 +184,40 @@ you can see that the CDocument is first initialized and only then gets cloned. b
 08 00000009`8abf9460 00007ffe`a6ef84b0 edgehtml!CDocument::importNode+0x89
 09 00000009`8abf94b0 00007ffe`a6b48fe5 edgehtml!CFastDOM::CDocument::Trampoline_importNode+0xcc
 0a 00000009`8abf9570 00007ffe`a60199f1 edgehtml!CFastDOM::CDocument::Profiler_importNode+0x25
+
+0:019> u edgehtml!Tree::TreeWriter::CloneTreeInternal+0x1f2
+edgehtml!Tree::TreeWriter::CloneTreeInternal+0x1f2:
+00007ffe`a65f949a 488b5c2440      mov     rbx,qword ptr [rsp+40h]
+00007ffe`a65f949f 488bd5          mov     rdx,rbp
+00007ffe`a65f94a2 488bcb          mov     rcx,rbx
+00007ffe`a65f94a5 e886493100      call    edgehtml!Tree::TreeWriter::AppendChildInternalConnection (00007ffe`a690de30)
+00007ffe`a65f94aa 488bcd          mov     rcx,rbp
+00007ffe`a65f94ad e82e193e00      call    edgehtml!Tree::ANode::TreeOwner (00007ffe`a69dade0)
+00007ffe`a65f94b2 488bd0          mov     rdx,rax
+00007ffe`a65f94b5 488bcb          mov     rcx,rbx
+0:019> u edgehtml!Tree::TreeWriter::AppendChildInternalConnection
+edgehtml!Tree::TreeWriter::AppendChildInternalConnection:
+00007ffe`a690de30 4883ec28        sub     rsp,28h
+00007ffe`a690de34 e877201800      call    edgehtml!Tree::ANode::PreviousSibling (00007ffe`a6a8feb0)
+00007ffe`a690de39 4885c0          test    rax,rax
+00007ffe`a690de3c 757b            jne     edgehtml!Tree::TreeWriter::AppendChildInternalConnection+0x89 (00007ffe`a690deb9)
+00007ffe`a690de3e 48394140        cmp     qword ptr [rcx+40h],rax
+00007ffe`a690de42 757b            jne     edgehtml!Tree::TreeWriter::AppendChildInternalConnection+0x8f (00007ffe`a690debf)
+00007ffe`a690de44 e8c7c60c00      call    edgehtml!Tree::ANode::Parent (00007ffe`a69da510)
+00007ffe`a690de49 4885c0          test    rax,rax
+0:019> u edgehtml!Tree::ANode::Parent
+edgehtml!Tree::ANode::Parent:
+00007ffe`a69da510 8b4160          mov     eax,dword ptr [rcx+60h]
+00007ffe`a69da513 2501000008      and     eax,8000001h
+00007ffe`a69da518 3d01000008      cmp     eax,8000001h
+00007ffe`a69da51d 7405            je      edgehtml!Tree::ANode::Parent+0x14 (00007ffe`a69da524)
+00007ffe`a69da51f 488b4130        mov     rax,qword ptr [rcx+30h]
+00007ffe`a69da523 c3              ret
+00007ffe`a69da524 33c0            xor     eax,eax
+00007ffe`a69da526 c3              ret
+
+
+
 ```
 
 i have lost my bounty that could have helped me a lot in life. i have lost my sanity handling the case directly with msrc. i have lost my acknowledgment for my hard work and efforts.
