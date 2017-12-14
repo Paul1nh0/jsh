@@ -56,10 +56,10 @@ the crash was as follows:<br><br>
 <br><br>
 where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the page that redirected to that page. seeking to find exploitability assessment, i tried to see if this data is controllable, after some hours of debugging the application i could controll the register value (by heap spray) who is later used to determine the length of a string to be allocated by the runtime. for whoever is looking to see how one can exploit that oob r/w for rce you can look at this great <html><a href="https://googleprojectzero.blogspot.co.il/2014/07/pwn4fun-spring-2014-safari-part-i_24.html">blogpost</a></html> from Ian beer.<br><br>
 
-from my note's to msrc:<br>
-i think that the problem is that while the document still do not contain the new allocated object,<br>
+from my note's to msrc:<br><br>
+"i think that the problem is that while the document still do not contain the new allocated object,<br>
 we can still cast properties. that means that there is likly a problem with the constructor,<br>
-who do not zero out non-existing fields, calling a clone on this object will lead to use of uninitialized variables.<br>
+who do not zero out non-existing fields, calling a clone on this object will lead to use of uninitialized variables."<br>
 
 i have also found different code paths to the same issue that i have identified as a race condition leading to use-of-uninitialized memory (maybe this sample will help):<br>
 
