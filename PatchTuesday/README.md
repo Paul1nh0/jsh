@@ -167,7 +167,8 @@ funny thing is i got also this responce (clarifying that this indeed a security 
 # Summery
 to sum up i woke up to latest patch tuesday with both my bugs fixed.<br><br>
 
-they have added this checks before computing the clone mathods.
+you can see that the CDocument is first initialized and only then gets cloned. by CElement::Clone<br> 
+(see the above stack for a referance).
 
 ```c
 0:019> kn
