@@ -85,13 +85,13 @@
 <arg> = arg9
 
 <propertydescriptorfield> = get: <function>
-<propertydescriptorfield> = has:()=> <function>
-<propertydescriptorfield> = has:()=> <param>
+<propertydescriptorfield> = {has:()=> <function>}
+<propertydescriptorfield> = {has:()=> <param>}
 <propertydescriptorfield> = set: <function>
 <propertydescriptorfield> = value : <function>
 <propertydescriptorfield> = getPrototypeOf: <function>
 <propertydescriptorfield> = setPrototypeOf: <function>
-<propertydescriptorfield> = prototype.__defineGetter__ <function>
+<propertydescriptorfield> = prototype.__defineGetter__, <function>
 <propertydescriptorfield> = __proto__:  <function>
 <propertydescriptorfield> = __proto__.reverse:  <function>
 <propertydescriptorfield> = enumerable: <param>
