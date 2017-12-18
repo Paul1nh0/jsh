@@ -56,6 +56,7 @@
 <property> = callee
 <property> = arguments
 <property> = global
+<property> = species
 
 <propertyorindex> = <property>
 <propertyorindex> = <fuzzint>
@@ -85,6 +86,12 @@
 
 <propertydescriptorfield> = get: <function>
 <propertydescriptorfield> = set: <function>
+<propertydescriptorfield> = value : <function>
+<propertydescriptorfield> = getPrototypeOf: <function>
+<propertydescriptorfield> = setPrototypeOf: <function>
+<propertydescriptorfield> = prototype.__defineGetter__ <function>
+<propertydescriptorfield> = __proto__  <function>
+<propertydescriptorfield> = __proto__.reverse  <function>
 <propertydescriptorfield> = enumerable: <param>
 <propertydescriptorfield> = writable: <param>
 <propertydescriptorfield> = configurable: <param>
@@ -115,6 +122,12 @@
 <function> = f8
 <function> = f9
 
+<handler> = h0
+<handler> = h1
+
+<proxy> = p0
+<proxy> = p1
+
 <fuzzstring> = <fuzzstringpart>
 <fuzzstring> = <fuzzstringpart> + <fuzzstringpart>
 <fuzzstring> = <fuzzstringpart> + <fuzzstringpart> + <fuzzstringpart>
@@ -136,7 +149,8 @@
 !begin lines
 
 <var> = Array;
-<var> = ActiveXObject;
+<var> = new Proxy({}, <function>)
+<var> = <propertydescriptor>
 <var> = Date;
 <var> = Boolean;
 <var> = Enumerator;
@@ -160,6 +174,7 @@
 <var> = <fuzzstring>;
 <var> = this;
 <var> = <function>;
+<var> = <proxy>;
 
 var ret = <arg>; if(ret) <retvar> = ret;
 
@@ -167,7 +182,7 @@ var ret = <var>(<param>, <param>, <param>, <param>, <param>); if(ret) <retvar> =
 var ret = new <var>(<param>, <param>, <param>, <param>, <param>); if(ret) <retvar> = ret;
 var ret = <var>.call(<var>, <param>, <param>, <param>, <param>, <param>); if(ret) <retvar> = ret;
 var ret = new <var>.call(<var>, <param>, <param>, <param>, <param>, <param>); if(ret) <retvar> = ret;
-var ret = <var>.appy(<var>, <param>); if(ret) <retvar> = ret;
+var ret = <var>.apply(<var>, <param>); if(ret) <retvar> = ret;
 var ret = new <var>.apply(<var>, <param>); if(ret) <retvar> = ret;
 
 <var>.<property> = <param>;
@@ -221,11 +236,6 @@ var ret = <var>[<fuzzint>]; if(ret) <retvar> = ret;
 var ret = <var>[<fuzzint>]; if(ret) <retvar> = ret;
 <var>[<fuzzint>] = <param>;
 var ret = <var>[<fuzzint>]; if(ret) <retvar> = ret;
-
-var ret = new ActiveXObject(<param>, <param>); if(ret) <retvar> = ret;
-var ret = new ActiveXObject(<param>); if(ret) <retvar> = ret;
-var ret = ActiveXObject(<param>, <param>); if(ret) <retvar> = ret;
-var ret = ActiveXObject(<param>); if(ret) <retvar> = ret;
 
 var ret = new Array(); if(ret) <retvar> = ret;
 var ret = new Array(<param>); if(ret) <retvar> = ret;
@@ -308,9 +318,21 @@ var ret = Error.prototype.toString.call(<var>); if(ret) <retvar> = ret;
 var ret = <var>.call(<var>); if(ret) <retvar> = ret;
 var ret = <var>.call(<var>, <param>, <param>, <param>); if(ret) <retvar> = ret;
 var ret = <var>.apply(<var>, <var>); if(ret) <retvar> = ret;
-# var ret = <function>.call(<var>); if(ret) <retvar> = ret;
-# var ret = <function>.call(<var>, <param>, <param>, <param>); if(ret) <retvar> = ret;
-# var ret = <function>.apply(<var>, <var>); if(ret) <retvar> = ret;
+var ret = <function>.call(<var>); if(ret) <retvar> = ret;
+var ret = <function>.call(<var>, <param>, <param>, <param>); if(ret) <retvar> = ret;
+var ret = <function>.apply(<var>, <var>); if(ret) <retvar> = ret;
+var ret = <proxy>.apply(); if(ret) <retvar> = ret;
+var ret = <proxy>.setPrototypeOf(); if(ret) <retvar> = ret;
+var ret = <proxy>.set(); if(ret) <retvar> = ret;
+var ret = <proxy>.isExtensible(); if(ret) <retvar> = ret;
+var ret = <proxy>.setPrototypeOf(); if(ret) <retvar> = ret;
+var ret = <proxy>.ownKeys(); if(ret) <retvar> = ret;
+var ret = <proxy>.deleteProperty(); if(ret) <retvar> = ret;
+var ret = <proxy>.defineProperty(); if(ret) <retvar> = ret;
+var ret = <proxy>.construct(); if(ret) <retvar> = ret;
+var ret = <proxy>.getPrototypeOf(); if(ret) <retvar> = ret;
+var ret = <proxy>.getOwnPropertyDescriptor(); if(ret) <retvar> = ret;
+var ret = <proxy>.get(); if(ret) <retvar> = ret;
 var ret = Function.prototype.toString.call(<var>); if(ret) <retvar> = ret;
 var ret = Function.prototype.call.call(<var>, <var>); if(ret) <retvar> = ret;
 var ret = Function.prototype.call.call(<var>, <var>, <param>, <param>, <param>); if(ret) <retvar> = ret;
@@ -424,17 +446,6 @@ var ret = String.prototype.toLowerCase.call(<var>); if(ret) <retvar> = ret;
 var ret = String.prototype.toLocaleLowerCase.call(<var>); if(ret) <retvar> = ret;
 var ret = String.prototype.toLocaleUpperCase.call(<var>); if(ret) <retvar> = ret;
 var ret = String.prototype.localeCompare.call(<var>, <param>); if(ret) <retvar> = ret;
-
-var ret = new VBArray(<var>); if(ret) <retvar> = ret;
-var ret = VBArray(<var>); if(ret) <retvar> = ret;
-var ret = new VBArray(); if(ret) <retvar> = ret;
-var ret = VBArray(); if(ret) <retvar> = ret;
-var ret = VBArray.prototype.dimensions.call(<var>); if(ret) <retvar> = ret;
-var ret = VBArray.prototype.getItem.call(<var>, <param>); if(ret) <retvar> = ret;
-var ret = VBArray.prototype.getItem.call(<var>, <param>, <param>); if(ret) <retvar> = ret;
-var ret = VBArray.prototype.toArray.call(<var>); if(ret) <retvar> = ret;
-var ret = VBArray.prototype.lbound.call(<var>, <param>); if(ret) <retvar> = ret;
-var ret = VBArray.prototype.ubound.call(<var>, <param>); if(ret) <retvar> = ret;
 
 # TODO math
 
