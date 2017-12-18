@@ -85,6 +85,8 @@
 <arg> = arg9
 
 <propertydescriptorfield> = get: <function>
+<propertydescriptorfield> = has:()=> <function>
+<propertydescriptorfield> = has:()=> <param>
 <propertydescriptorfield> = set: <function>
 <propertydescriptorfield> = value : <function>
 <propertydescriptorfield> = getPrototypeOf: <function>
