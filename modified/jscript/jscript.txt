@@ -122,9 +122,6 @@
 <function> = f8
 <function> = f9
 
-<handler> = h0
-<handler> = h1
-
 <proxy> = p0
 <proxy> = p1
 
