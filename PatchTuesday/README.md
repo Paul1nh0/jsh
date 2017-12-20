@@ -173,10 +173,7 @@ edgehtml!Tree::ANode::Parent:
 
   * 17-10-2017 - vulnerability found
   * 17-10-2017 - vulnerability reported to vendor got initial triage (18).
-  * 18-10-2017 - 15-11-2017 - desperately tried to send additional details to msrc.
-  * 26-10-2017 - submitted to a third side party bounty program.
-  * 15-11-2017 - responded with acknowledgment of exploitability and a fix pursue by msrc (after contacting @krzywix).
-  * 21-11-2017 - recived a decent bounty offer (FROM THE THIRD PARTY) - that i had to decline.
+  * 15-11-2017 - responded with acknowledgment of exploitability and a fix pursue by msrc.
   * 12-12-2017 - vulnerability fixed, got an email that it will be publicly available next month.
   
 
