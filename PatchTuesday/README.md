@@ -1,12 +1,6 @@
 # Msrc Case 41548 - Microsoft Edge: multiple race conditions leading to rce.
 
-So it all started with ivan fratric project zero <html><a href="https://googleprojectzero.blogspot.co.il/2017/09/the-great-dom-fuzz-off-of-2017.html">blog post and the new open source fuzzer-DOMATO.</a></html>. i have read the post and decided to try and experiment a little with fuzzing this browser.<br> it didnt take long for me to realize that menuel fuzzing will be too much of a pain and i began to write my own harness, in addition i made some changes and added extra api's to the fuzzer in order to get a little heads-up on the big amount of people who are currently running the fuzzer (i only had one machine).<br>
-anyone who had ever fuzzed edge knows that there are a big amount of un-exploitable bugs in edge that can make the fuzzing work very difficult, one has to capture the debug output but to filter out those, it seems as if microsoft has no intention to fix any of those bugs. (a list will be given at the end of this article of about 500 dos conditions that go from division by zero to mem-gc protected uaf's).<br>
-but, maybe to reader suprise, the difficult part was not coding the harness and overcoming the recent changes to edge ( Edge has become a full Universal Windows Platform (UWP) App. This means that the main Edge process no longer spawns any of the sandboxed child processes directly, but that all processes are spawned by the UWP framework.) that makes fuzzing this program to a somewhat challenging task, the most difficult part of this bug hunting quest was contacting msrc. i will try to add as little description as i possibly can to not sound like i got any opinion on the issue (although it will be a little difficult).
-
-it was not long before i came across some intersting crash's, but none of them seemed to have any security context, and all this time i was thinking that maybe ivan released this too fast. another one of my thoughts was, maybe he simply gave up contacting msrc, seeing posts like this <html> <a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1237#c1">one</a></html>.
-
-well, i was about to give up, and have stoped my harness. this was the first day stable rs3 was out and i have upgraded my computer. it was also the time of this <html> <a href="https://blogs.technet.microsoft.com/mmpc/2017/10/18/browser-security-beyond-sandboxing/">public relations post</a></html> was out. and i decided to give one last longshot to the fuzzer. after running the automation during the night i have noticed one weird crash it looked as if edgehtml was trying to get a length of a url-string from a bogus address way too high to have any meaning. it didnt look exploitable at first but i thought i'd submit this anyway to msrc. like many of my previous submissions to that point i have received a ticket, but till' this day i didnt got any responce (case n: 41557). i gave a closer look at the crash and began to see other forms of crash from this sample, some of them looked exploitable at first sight (crashing at memcpy read, or write VA). stupid as i was (the reader will understand later) i have quickly notified msrc about this and i was a little stressed out becouse jugding from my previews expiriance i had very little chance that someone will actually read my emails or take action upon this vulnerability, but on the other hand with a good harness anyone running this fuzzer will probably have better chance than me finding this vulnerability (i only had one machine). including bad people. as always i got a ticket. i continued to research this case and after reducing this test case i was left with this lines:
+# Trigger
 
 ```javascript
 var a1 = document.createElementNS("http://www.w3.org/2000/svg", "mpath");                   (1)                        
@@ -119,51 +113,8 @@ here are some graphics for the reader:<br><br>
 
 ![](pics/aaa6.PNG)
 
-at this point i was really stressed out becouse i have in hand an exploitable memory curroption but i cannot update my details on any of my cases in addition i cant get a singal responce to any of my reported emails, i have tried desperately to resend the report and got some emails clarifying me what counts as a vulnerability and other none-sense, here are some of them:
-
-![](pics/a1.PNG)
-![](pics/a2.PNG)
-![](pics/a3.PNG)
-![](pics/a4.PNG)
-![](pics/a5.PNG)
-![](pics/a6.PNG)
-![](pics/a7.PNG)
-![](pics/a8.PNG)
-![](pics/a9.PNG)
-![](pics/a10.PNG)
-![](pics/a11.PNG)
-![](pics/aboutsecurity.PNG)
-
-by my desperation and my worries to the end users i have submitted the vulnerability to a big third side bounty program hoping that my report will be read. (we will go about that very soon).<br>
-
-at this point i have seen on twitter this thread:
-<html><a href="https://twitter.com/berendjanwever/status/929328331899666434">https://twitter.com/berendjanwever/status/929328331899666434</a></html><br>
-
-![](pics/r.PNG)
-![](pics/msr.PNG)
-
-so i decided to contact he'm:<br><br>
-
-![](pics/k1.PNG)
-![](pics/k2.PNG)
-![](pics/k3.PNG)
-![](pics/k4.PNG)
-![](pics/k5.PNG)
-![](pics/k6.PNG)
-
-and then finally after all the mess i got a mail replay thx krzywix (i guess).
-
-![](pics/rsp1.PNG)
-
-at this time i also got the responce from the third party bounty program who offered a decent bounty ofc i had to decline it becouse it was already reported to the vendor, but just for the referance its about the same time in regards to the responce time and the handling of the case (users wise)..
-
-funny thing is i got also this responce (clarifying that this indeed a security issue and will be addressed by microsoft.):
-
-![](pics/ns1.PNG)
-![](pics/sn2.PNG)
-
-# Summery
-to sum up i woke up to latest patch tuesday with both my bugs fixed.<br><br>
+# Fix
+afaik this was patched in december pt.<br><br>
 
 you can see that the CDocument is first initialized and only then gets cloned. by CElement::Clone<br> 
 (see the above stack for a referance).
@@ -218,26 +169,15 @@ edgehtml!Tree::ANode::Parent:
 
 ```
 
-i have lost my bounty that could have helped me a lot in life. i have lost my sanity handling the case directly with msrc. i have lost my acknowledgment for my hard work and efforts.
-
 # TimeLine:
 
   * 17-10-2017 - vulnerability found
   * 17-10-2017 - vulnerability reported to vendor got initial triage (18).
   * 18-10-2017 - 15-11-2017 - desperately tried to send additional details to msrc.
   * 26-10-2017 - submitted to a third side party bounty program.
-  * 15-11-2017 - finally i was responded with acknowledgment of exploitability and a fix pursue by msrc (after contacting @krzywix).
+  * 15-11-2017 - responded with acknowledgment of exploitability and a fix pursue by msrc (after contacting @krzywix).
   * 21-11-2017 - recived a decent bounty offer (FROM THE THIRD PARTY) - that i had to decline.
-  * 12-12-2017 - vulnerability fixed, without credit or bounty.
-  * 12-14-12-2017 - tried to contact msrc via email, tried to contact @krzywix - to get a conformation that the bug is indeed fixed so i can close it on my side, received no reply from msrc, @krzywix told me its not he's job and that "many people are fuzzing edge at the moment".
+  * 12-12-2017 - vulnerability fixed, got an email that it will be publicly available next month.
   
-# Conclusions
-
- * i have helped making the microsoftedge more secure and microsoft to secure there end-users.
- * all future vulnerability's that i will find (and there are more) in microsoft products will be sent through a third party program.<br>
- * Microsoft is a demeaning vendor to independent security researchers not working for high class companies with big audience.<br>
-you can take a look at this thread as a contra-measure: <html><a href="https://bugs.chromium.org/p/chromium/issues/detail?id=669086#c20">#1</a></html><br>
- * or this threads: <html><a href="https://twitter.com/klotxl/status/921209998352334850">#2 </a></html> <html><a href="https://bugs.chromium.org/p/project-zero/issues/detail?id=1324&desc=2#c8">#3 </a> <a href="https://github.com/Microsoft/ChakraCore/issues/4112"> #4 </a> <a href="https://twitter.com/PythonResponder/status/826911743142150145"> #5 </a></html> <html><a href="https://twitter.com/berendjanwever/status/937798675828535297"> #6 </a></html> or this ironic <html>  <a href="https://cybellum.com/microsoft-claims-dev-tools-dangerous/">blogpost</a></html><br>
- * i will focus on other vendors, although the users deserve the security research the vendor simply dont.<br>
 
 
