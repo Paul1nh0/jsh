@@ -45,18 +45,10 @@ partial stack trace:
 16 00000050`e6bf6a50 00007fff`51100f08 chakra!Js::InterpreterStackFrame::ProcessUnprofiled+0x8c
 ```
 
-the crash was as follows:<br><br>
-
-![](pics/curroption,,.PNG)
-
-<br><br>
-where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the page that redirected to that page. seeking to find exploitability assessment, i tried to see if this data is controllable, after some hours of debugging the application i could controll the register value (by heap spray, that i will blog about after i will finish fuzzing edge and then i wont need that technique anymore ..) who is later used to determine the length of a string to be allocated by the runtime. this leads to oob r/w.<br> 
-# Find a Monkey to finish the exploit!
-
 from my note's to msrc:<br><br>
 "i think that the problem is that while the document still do not contain the new allocated object,<br>
 we can still cast properties. that means that there is likly a problem with the constructor,<br>
-who do not zero out non-existing fields, calling a clone on this object will lead to use of uninitialized variables."<br>
+who do not zero out uninitialized fields, calling a clone on this object will lead to use of uninitialized variables."<br>
 
 i have also found different code paths to the same issue that i have identified as a race condition leading to use-of-uninitialized memory (maybe this sample will help):<br>
 
@@ -96,25 +88,34 @@ var heapOverFlow = document.importNode(uafObject,true);
 06 0000001f`cbcfae20 00007ffe`a57c01a2 edgehtml!CAttrValue::InitVariant+0x19e
 07 0000001f`cbcfae60 00007ffe`a57c0001 edgehtml!CAttrValue::Copy+0x66
 08 0000001f`cbcfaeb0 00007ffe`a57bfe92 edgehtml!CAttrArray::Clone+0xf1
-09 0000001f`cbcfaf30 00007ffe`a5bc0bda edgehtml!CElement::CloneAttributes+0x42                            <-- CElement this time ..
+09 0000001f`cbcfaf30 00007ffe`a5bc0bda edgehtml!CElement::CloneAttributes+0x42   
 0a 0000001f`cbcfaf60 00007ffe`a58610be edgehtml!CCommentElement::CloneAttributes+0x1a
-0b 0000001f`cbcfaf90 00007ffe`a5840a00 edgehtml!CElement::Clone+0x1de
+0b 0000001f`cbcfaf90 00007ffe`a5840a00 edgehtml!CElement::Clone+0x1de                      
 0c 0000001f`cbcfb150 00007ffe`a58408d8 edgehtml!Tree::TreeWriter::CloneNode+0x80
 0d 0000001f`cbcfb190 00007ffe`a5667a5c edgehtml!Tree::TreeWriter::CloneNodeInternal+0xa4
 0e 0000001f`cbcfb1e0 00007ffe`a5667be5 edgehtml!Tree::TreeWriter::CloneTreeInternal+0x134
 0f 0000001f`cbcfb220 00007ffe`a5666518 edgehtml!Tree::TreeWriter::CloneTree+0x8d
-10 0000001f`cbcfb2a0 00007ffe`a5bcf929 edgehtml!CElement::CloneNodeHelper+0x58
-11 0000001f`cbcfb2d0 00007ffe`a5ca90d8 edgehtml!CDocument::importNode+0x89                                   <-- Our importNode.
-12 0000001f`cbcfb320 00007ffe`a58f8df5 edgehtml!CFastDOM::CDocument::Trampoline_importNode+0xcc              (it's not a common api ..)
+10 0000001f`cbcfb2a0 00007ffe`a5bcf929 edgehtml!CElement::CloneNodeHelper+0x58      <-- CElement
+11 0000001f`cbcfb2d0 00007ffe`a5ca90d8 edgehtml!CDocument::importNode+0x89          <-- Our importNode. operating on CDocument::.
+
+12 0000001f`cbcfb320 00007ffe`a58f8df5 edgehtml!CFastDOM::CDocument::Trampoline_importNode+0xcc              
 13 0000001f`cbcfb3e0 00007ffe`ba7ab491 edgehtml!CFastDOM::CDocument::Profiler_importNode+0x25
 ```
 
+the crash was as follows:<br><br>
+
+![](pics/curroption,,.PNG)
+
+<br><br>
+where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the page that redirected to that page. seeking to find exploitability assessment, i tried to see if this data is controllable, after some hours of debugging the application i could controll the register value (by heap spray, that i will blog about after i will finish fuzzing edge and then i wont need that technique anymore ..) who is later used to determine the length of a string to be allocated by the runtime. this leads to oob r/w.<br> 
 here are some graphics for the reader:<br><br>
 
 ![](pics/register.PNG)<br><br>
 
 
 ![](pics/aaa6.PNG)
+
+# Find a Monkey to finish the exploit!
 
 # Fix
 afaik this was patched in december pt.<br><br>
