@@ -310,22 +310,22 @@ var ret = new <var>.call(<var>, <param>, <param>, <param>, <param>, <param>); if
 var ret = <var>.apply(<var>, <param>); if(ret) <retvar> = ret;
 var ret = new <var>.apply(<var>, <param>); if(ret) <retvar> = ret;
 
-for(var i=1;i<= <fuzzint> ;i++) {<var>[i] = <param>};
-for(var i=1;i<= <fuzzint> ;i++) {<var>[i] = <var>};
-for(var i=1;i<= <fuzzint> ;i++) {<var>[++i] = <var>};
-for(var i=1;i<= <fuzzint> ;i++) {<var>[++i] = <param>};
-for(let i=1;i<= <fuzzint> ;i++) {<var>[i] = <param>};
-for(let i=1;i<= <fuzzint> ;i++) {<var>[i] = <var>};
-for(let i=1;i<= <fuzzint> ;i++) {<var>[++i] = <var>};
-for(let i=1;i<= <fuzzint> ;i++) {<var>[++i] = <param>};
-for(var i=1;i<= <fuzzint> ;i++) {<var>[i] = <param>};
-for(var i=1;i<= <fuzzint> ;i++) {<var>[i] = <var>};
-for(var i=1;i<= <fuzzint> ;i++) {<var>[++i] = <var>};
-for(var i=1;i<= <fuzzint> ;i++) {<var>[++i] = <param>};
-for(let i=1;i<= <fuzzint> ;i++) {<var>[i] = <param>};
-for(let i=1;i<= <fuzzint> ;i++) {<var>[i] = <var>};
-for(let i=1;i<= <fuzzint> ;i++) {<var>[++i] = <var>};
-for(let i=1;i<= <fuzzint> ;i++) {<var>[++i] = <param>};
+for(var i=1;i<= <lfuzzint> ;i++) {<var>[i] = <param>};
+for(var i=1;i<= <lfuzzint> ;i++) {<var>[i] = <var>};
+for(var i=1;i<= <lfuzzint> ;i++) {<var>[++i] = <var>};
+for(var i=1;i<= <lfuzzint> ;i++) {<var>[++i] = <param>};
+for(let i=1;i<= <lfuzzint> ;i++) {<var>[i] = <param>};
+for(let i=1;i<= <lfuzzint> ;i++) {<var>[i] = <var>};
+for(let i=1;i<= <lfuzzint> ;i++) {<var>[++i] = <var>};
+for(let i=1;i<= <lfuzzint> ;i++) {<var>[++i] = <param>};
+for(var i=1;i<= <lfuzzint> ;i++) {<var>[i] = <param>};
+for(var i=1;i<= <lfuzzint> ;i++) {<var>[i] = <var>};
+for(var i=1;i<= <lfuzzint> ;i++) {<var>[++i] = <var>};
+for(var i=1;i<= <lfuzzint> ;i++) {<var>[++i] = <param>};
+for(let i=1;i<= <lfuzzint> ;i++) {<var>[i] = <param>};
+for(let i=1;i<= <lfuzzint> ;i++) {<var>[i] = <var>};
+for(let i=1;i<= <lfuzzint> ;i++) {<var>[++i] = <var>};
+for(let i=1;i<= <lfuzzint> ;i++) {<var>[++i] = <param>};
 
 <var>.<property> = <param>;
 var ret = <var>.<property>; if(ret) <retvar> = ret;
