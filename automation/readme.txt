@@ -14,6 +14,30 @@ https://www.microsoft.com/en-us/download/details.aspx?id=29,
 https://www.microsoft.com/en-us/download/details.aspx?id=15336
 
 << linux >>
+
 download ONLY ASAN BUILDS!
 
 profit
+
+USEFULL-LINKS:
+
+<< mozila >>
+
+SpiderMonkey: https://archive.mozilla.org/pub/firefox/releases/58.0b5/jsshell/
+
+Nightly: https://www.mozilla.org/en-US/firefox/channel/desktop/  <-- good for fuzzing ..
+
+Asan: https://developer.mozilla.org/en-US/docs/Mozilla/Testing/Firefox_and_Address_Sanitizer
+Source: https://hg.mozilla.org/mozilla-central/
+
+<< google >>
+
+Asan: https://commondatastorage.googleapis.com/chromium-browser-asan/index.html
+Source: https://cs.chromium.org/chromium/src
+
+<< Ms >>
+
+Chakra: https://github.com/Microsoft/ChakraCore/releases
+Source: https://github.com/Microsoft/ChakraCore
+
+
