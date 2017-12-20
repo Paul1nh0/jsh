@@ -21,7 +21,7 @@ profit
 
 USEFUL-LINKS:
 
-<< mozila >>
+<< mozilla >>
 
 SpiderMonkey: https://archive.mozilla.org/pub/firefox/releases/58.0b5/jsshell/
 Nightly: https://www.mozilla.org/en-US/firefox/channel/desktop/  <-- good for fuzzing ..
