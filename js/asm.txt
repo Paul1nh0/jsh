@@ -1,0 +1,8 @@
+function j0(){
+    "use asm"
+    function j1(a,b){
+        //<asm>
+	return (a+b)|0;
+    }
+    return j1
+}
