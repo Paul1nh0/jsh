@@ -50,7 +50,8 @@ the crash was as follows:<br><br>
 ![](pics/curroption,,.PNG)
 
 <br><br>
-where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the page that redirected to that page. seeking to find exploitability assessment, i tried to see if this data is controllable, after some hours of debugging the application i could controll the register value (by heap spray, that i will blog about after i will finish fuzzing edge and then i wont need that technique anymore ..) who is later used to determine the length of a string to be allocated by the runtime. this leads to oob r/w.<br> Find a Monkey to finish the exploit!<br><br>
+where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the page that redirected to that page. seeking to find exploitability assessment, i tried to see if this data is controllable, after some hours of debugging the application i could controll the register value (by heap spray, that i will blog about after i will finish fuzzing edge and then i wont need that technique anymore ..) who is later used to determine the length of a string to be allocated by the runtime. this leads to oob r/w.<br> 
+# Find a Monkey to finish the exploit!
 
 from my note's to msrc:<br><br>
 "i think that the problem is that while the document still do not contain the new allocated object,<br>
