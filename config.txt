@@ -1,6 +1,0 @@
-PATH=../jsf\\
-BINCMDLINE=d8.exe --allow-natives-syntax --wasm-opt 
-BINPATH=../asan-win32-release-514498
-CURPUS=../test
-LOG=../test\\crash\\
-RUNNUM=10
