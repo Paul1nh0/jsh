@@ -1,5 +1,7 @@
 # Msrc Case 41548 - Microsoft Edge: multiple race conditions leading to rce.
 
+this vulnerability was found fuzzing with a modified version of  <html> <a href="https://github.com/google/domato">domato</a></html>.
+
 # Trigger
 
 ```javascript
@@ -48,7 +50,7 @@ the crash was as follows:<br><br>
 ![](pics/curroption,,.PNG)
 
 <br><br>
-where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the page that redirected to that page. seeking to find exploitability assessment, i tried to see if this data is controllable, after some hours of debugging the application i could controll the register value (by heap spray) who is later used to determine the length of a string to be allocated by the runtime. for whoever is looking to see how one can exploit that oob r/w for rce you can look at this great <html><a href="https://googleprojectzero.blogspot.co.il/2014/07/pwn4fun-spring-2014-safari-part-i_24.html">blogpost</a></html> from Ian beer.<br><br>
+where the address of rax was taken from rcx who was pointing to heap memory. i have noticed that this is indeed the microsoftedgecp heap memory becouse i could sometimes spot left-overs of the page that redirected to that page. seeking to find exploitability assessment, i tried to see if this data is controllable, after some hours of debugging the application i could controll the register value (by heap spray, that i will blog about after i will finish fuzzing edge and then i wont need that technique anymore ..) who is later used to determine the length of a string to be allocated by the runtime. this leads to oob r/w.<br> Find a Monkey to finish the exploit!<br><br>
 
 from my note's to msrc:<br><br>
 "i think that the problem is that while the document still do not contain the new allocated object,<br>
@@ -174,7 +176,7 @@ edgehtml!Tree::ANode::Parent:
   * 17-10-2017 - vulnerability found
   * 17-10-2017 - vulnerability reported to vendor got initial triage (18).
   * 15-11-2017 - responded with acknowledgment of exploitability and a fix pursue by msrc.
-  * 12-12-2017 - vulnerability fixed, got an email that it will be publicly available next month.
+  * 12-12-2017 - vulnerability fixed, got an email that it is not yet publicly available.
   
 
 
