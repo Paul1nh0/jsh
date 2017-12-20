@@ -24,9 +24,7 @@ USEFULL-LINKS:
 << mozila >>
 
 SpiderMonkey: https://archive.mozilla.org/pub/firefox/releases/58.0b5/jsshell/
-
 Nightly: https://www.mozilla.org/en-US/firefox/channel/desktop/  <-- good for fuzzing ..
-
 Asan: https://developer.mozilla.org/en-US/docs/Mozilla/Testing/Firefox_and_Address_Sanitizer
 Source: https://hg.mozilla.org/mozilla-central/
 
