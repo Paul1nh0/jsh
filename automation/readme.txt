@@ -41,5 +41,10 @@ Source: https://cs.chromium.org/chromium/src
 Chakra: https://github.com/Microsoft/ChakraCore/releases
 Source: https://github.com/Microsoft/ChakraCore
 
+<< apple >>
+
+webkit: https://webkit.org/blog/29/nightly-builds/
+Source: https://github.com/WebKit/webkit
+
 
  
