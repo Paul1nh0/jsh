@@ -1,3 +1,6 @@
+
+## Setup ##
+
 << python >>
 
 download and install python 2.7 -> https://www.python.org/downloads/
@@ -19,7 +22,7 @@ download ONLY ASAN BUILDS!
 
 profit
 
-USEFUL-LINKS:
+## USEFUL-LINKS ##
 
 << mozilla >>
 
