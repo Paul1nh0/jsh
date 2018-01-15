@@ -23,6 +23,9 @@ configure edge to delete history.
 
 -- linux --
 
+((firefox))
+do this: http://how-to.wikia.com/wiki/How_to_disable_Firefox%27s_session_restore_crash_recovery_feature
+
 download ONLY ASAN BUILDS!
 
 profit
