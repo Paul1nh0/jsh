@@ -16,6 +16,11 @@ download and install:
 https://www.microsoft.com/en-us/download/details.aspx?id=29, 
 https://www.microsoft.com/en-us/download/details.aspx?id=15336
 
+((edge))
+
+configure edge to be the default browser.
+configure edge to delete history.
+
 -- linux --
 
 download ONLY ASAN BUILDS!
