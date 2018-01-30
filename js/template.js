@@ -1,7 +1,16 @@
 
+var ba;
+
+function freememory(){
+	for(var i=0;i<0x100000/0x10;i++){
+			new String;
+		}
+}
+
+
 function j0(){
 
-    try{}catch(e){}
+    
     //alert('a');
 
     var a = new Array();
@@ -10,6 +19,8 @@ function j0(){
     <ffh>
 
     function opt(a,b){
+	try{}catch(e){}
+
         <fff>
     }
     
@@ -151,7 +162,7 @@ for(var i=20;i<40;i++) {
   vars[i] = 'aaaaaaaaaa';
 }
 for(var i=40;i<60;i++) {
-  vars[i] = new Array();
+  vars[i] = ['a',{},[],7,[1,1,1,1],(function(){})];
 }
 for(var i=60;i<90;i++) {
   vars[i] = {};
