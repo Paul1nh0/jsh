@@ -192,6 +192,49 @@
 <function> = (function (s){ return; })
 <function> = (function (s){ return; })
 <function> = (function (s){ return; })
+<function> = (function (s,t){ return <var>; })
+<function> = (function (s,t){ return <var>; })
+<function> = (function (s,t){ return <var>; })
+<function> = (function (s,t){ return <var>; })
+<function> = (function (s,t){ return this; })
+<function> = (function (s,t){ return this; })
+<function> = (function (s,t){ return this; })
+<function> = (function (s,t){ return this; })
+<function> = (function (s,t){ return this; })
+<function> = (function (s,t){ ba = this; })
+<function> = (function (s,t){ ba = this; })
+<function> = (function (s,t){ ba = this; })
+<function> = (function (s,t){ s += s; })
+<function> = (function (s,t){ s += s; })
+<function> = (function (s,t){ s += s; })
+<function> = (function (s,t){ ba += s; })
+<function> = (function (s,t){ ba += s; })
+<function> = (function (s,t){ ba += s; })
+<function> = (function (s,t){ return; })
+<function> = (function (s,t){ return; })
+<function> = (function (s,t){ return; })
+<function> = (function (s,t){ with(s){ return <var>; }})
+<function> = (function (s,t){ with(s){ return <var>; } })
+<function> = (function (s,t){ with(s){ return <var>; } })
+<function> = (function (s,t){ with(s){ return <var>; } })
+<function> = (function (s,t){ with(s){ return <var>; } })
+<function> = (function (s,t){ with(s){ return this; } })
+<function> = (function (s,t){ with(s){ return this; } })
+<function> = (function (s,t){ with(s){ return this; } })
+<function> = (function (s,t){ with(s){ return this; } })
+<function> = (function (s,t){ with(s){ return this; } })
+<function> = (function (s,t){ with(s){ ba = this; } })
+<function> = (function (s,t){ with(s){ ba = this; } })
+<function> = (function (s,t){ with(s){ ba = this; } })
+<function> = (function (s,t){ with(s){ s+=s; } })
+<function> = (function (s,t){ with(s){ s+=s; } })
+<function> = (function (s,t){ with(s){ s+=s; } })
+<function> = (function (s,t){ with(s){ ba[7]+=s; } })
+<function> = (function (s,t){ with(s){ ba+=s; } })
+<function> = (function (s,t){ with(s){ ba+=s; } })
+<function> = (function (s,t){ with(t){ return; } })
+<function> = (function (s,t){ with(t){ return; } })
+<function> = (function (s,t){ with(t){ return; } })
 
 <proxy> = p0
 <proxy> = p1
@@ -220,6 +263,26 @@
 
 <var> = Array;
 <var> = new Proxy({}, <function>)
+<var> = new Proxy({}, <function>)
+<var> = new Proxy({}, <function>)
+<var> = new Proxy({}, <function>)
+<var> = new Proxy({}, <function>)
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
+<var> = new Proxy({}, <function>)
+<var> = new Proxy({}, <function>)
+<var> = new Proxy({}, <function>)
+<var> = new Proxy({}, <function>)
+<var> = new Proxy({}, <function>)
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
+<var> = <propertydescriptor>
 <var> = <propertydescriptor>
 <var> = Date;
 <var> = Boolean;
@@ -229,6 +292,27 @@
 <var> = JSON;
 <var> = RegExp;
 <var> = Object;
+<var> = Object;
+<var> = Object;
+<var> = Object;
+<var> = Object;
+<var> = Object;
+<var> = Object;
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
+<var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
 <var id=1> = Object.defineProperty(<var id=1>, "<propertyorindex>", {get: <function>, set: <function>} );
 <var> = new Array(<fuzzint>);
 <var> = j0();
@@ -382,9 +466,80 @@
 <var> = <function>;
 <var> = <function>;
 <var> = <function>;
+<var> = <function>;
+<var> = <function>;
+<var> = <function>;
+<var> = <function>;
+<var> = <function>;
+<var> = <function>;
+<var> = <function>;
+<var> = <function>;
 <var> = <proxy>;
 <var> = <proxy>;
 <var> = <proxy>;
+<var> = {};
+<var> = {};
+<var> = {};
+<var> = {};
+<var> = {};
+<var> = <fuzzstring>;
+<var> = this;
+<var> = this;
+<var> = this;
+<var> = this;
+<var> = this;
+<var> = this;
+<var> = this.x;
+<var> = this;
+<var> = this;
+<var> = this;
+<var> = this;
+<var> = this;
+<var> = [{}, [], "b", 7, 7, 7, 7, 7];
+<var> = [{}, [], "b", 7, 7, 7, 7, 7];
+<var> = [{}, [], "b", 7, 7, 7, 7, 7];
+<var> = [{}, [], "b", 7, 7, 7, 7, 7];
+<var> = [{}, [], "b", 7, 7, 7, 7, 7];
+<var> = [1, 2, 3];
+<var> = [1, 2, 3];
+<var> = [1, 2, 3];
+<var> = [1, 2, 3];
+<var> = [1, 2, 3];
+<var> = {a : 5};
+<var> = {a : 5};
+<var> = {a : 5};
+<var> = {a : 5};
+<var> = {a : 5};
+<var> = [1.009899, 2.009899, 3.009899];
+<var> = [1.009899, 2.009899, 3.009899];
+<var> = [1.009899, 2.009899, 3.009899];
+<var> = [1.009899, 2.009899, 3.009899];
+<var> = [1.009899, 2.009899, 3.009899];
+<var> = <function>;
+<var> = <function>;
+<var> = <function>;
+<var> = <function>;
+<var> = <proxy>;
+<var> = <proxy>;
+<var> = <proxy>;
+<var> = 'a';
+<var> = 'a';
+<var> = 'a';
+<var> = 'a';
+<var> = 'a';
+<var> = 'a';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
+<var> = 'akjnlkfdjdnjkvnds,vnew98fh-49r0830r32ur-39ru4-34r3r939ur=309rut4t95hgroguhfkesf;sdufhsdsS75	4D5FO8IYDUBKFSPND9SODFMDIVHFGODIUHRG;LADIFD';
 
 var ret = <arg>; if(ret) <retvar> = ret;
 
@@ -856,3 +1011,4 @@ var ret = <var>.valueOf = <var>; if(ret) <retvar> = ret;
 
 
 !end lines
+
