@@ -55,5 +55,11 @@ Source: https://github.com/Microsoft/ChakraCore
 webkit: https://webkit.org/blog/29/nightly-builds/
 Source: https://github.com/WebKit/webkit
 
+fuzz webkit on linux:
+
+download src from: https://webkit.org/getting-the-code/
+follow this inst: https://ghostbin.com/paste/rpqyp (after installing llvm clang)
+or apply this patch: https://gist.github.com/kkuehl/af5bbcd843a6239cee2c64b58be6def7 
+
 
  
