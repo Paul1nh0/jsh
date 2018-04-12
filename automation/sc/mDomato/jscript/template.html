@@ -6,6 +6,12 @@
 setTimeout(function(){ window.location = "file:///&&&&&&&";}, 10000); 
 </script>
 <script>
+	
+function freememory(){
+	for (let i = 0; i < 20; i++)
+			new ArrayBuffer(0x2000000);
+	}
+}
 
 function j0(){
 
