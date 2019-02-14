@@ -54,6 +54,7 @@ Source: https://github.com/Microsoft/ChakraCore
 
 webkit: https://webkit.org/blog/29/nightly-builds/
 Source: https://github.com/WebKit/webkit
+build with asan for MacOs: https://trac.webkit.org/wiki/ASanWebKit
 
 fuzz webkit on linux:
 
