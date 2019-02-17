@@ -18,3 +18,7 @@ python dspl.py.
 and open crash.log.txt
 
 have fun ..
+
+
+# Note:
+moz's dharma and ifratic's domato are licanced..
