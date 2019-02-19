@@ -25,7 +25,10 @@ why didn't i use bugid?
 
 
 usage:
-((more instructions are under /automation directory at this repo..))
+
+    recommended: disable windows defender anti-virus, for better performance.
+    Run Only inside a virtual machine!!
+    ((more instructions are under /automation directory at this repo..))
 
 install windbg..
 install vs runtime from ms..
