@@ -106,6 +106,10 @@ moz's dharma and ifratic's domato are Licensed (they are provided under the corr
                     
                 d) the first file consume cpu time (by a js loop that do nothing),
                     so we can reliably connect a debugger to the right MicrosoftEdgeCp.exe or ie process.
+                    
+                    
+ if you use this setup then see that you obey the license provided with dharma & domato.
+ my own code is not licensed and you can do whatever you like..
                 
                 
                 
