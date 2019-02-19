@@ -17,11 +17,20 @@ why didn't i use bugid?
 
 This is very straightforward:
 
+install windbg..
+install vs runtime from ms..
+change the default web browser for the system to your own..
+change all the directory paths to point to your own (i know its annoying..).
+install https://github.com/giampaolo/psutil
+additionally (on windows)-> extract psutil (downloaded from above link^^) to the automation\sc 
+ (or automation\msedge, whatever your running..)
+
 download this repo.
 
 go to the automation directory.
 
 choose sc//msedge
+open some cmd's.
 
 sc->javascript fuzzer for shels (see the --use_js_sh=1 argument and other modifications).
 msedge->domato based harness that connects windbg and collects crash repro and asseambly log.
