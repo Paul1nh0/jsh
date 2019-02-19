@@ -20,6 +20,7 @@ in this setup:
  1) a modified ver of @ifratric domato (that is licensed [provided here]).
  2) a modified ver of @mozillasecurity dharma (that is licensed [provided here]).
  3) some of my own costum generators & mutators.
+ 4) makes use of psutil python module (that is licensed [not provided here]).
 
 
 why didn't i use bugid?
