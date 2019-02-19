@@ -10,6 +10,10 @@ i used:
 # I Will Not answer any issues, or write a proper usage wiki.
 # I am only open sourcing this for the community benefit.
 
+why didn't i use bugid?
+  because this runs faster (less actions and analysis), and i didnt have much resources.
+  its very easy to see that a crash is not exploitable (null ptr assertion etc) directlly from asseambly..
+
 
 This is very straightforward:
 
