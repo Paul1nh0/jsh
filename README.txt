@@ -15,7 +15,7 @@ why didn't i use bugid?
   its very easy to see that a crash is not exploitable (null ptr assertion etc) directlly from asseambly..
 
 
-This is very straightforward:
+usage:
 
 install windbg..
 install vs runtime from ms..
