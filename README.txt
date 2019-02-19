@@ -102,10 +102,10 @@ moz's dharma and ifratic's domato are Licensed (they are provided under the corr
                 b) created (from jscript.txt) a javascript compatible and more extended dictionary.
                 
                 c) the generator create's (for dom fuzzing) a set of 15 files (and adds javascript to 
-                    nevigate to all the files->so we wont have to launch the program so many times...)
+                    navigate to all the files->so we wont have to launch the program so many times...)
                     
                 d) the first file consume cpu time (by a js loop that do nothing),
-                    so we can reliably connect a debugger to the right MicrosoftEdgeCp.exe or ie process.
+                    so we can reliably connect a debugger to the right MicrosoftEdgeCp.exe (or ie) child process.
                     
                     
  if you use this setup then see that you keep the license provided with dharma & domato & psutil.
