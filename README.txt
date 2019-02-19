@@ -70,9 +70,8 @@ python run.py
    python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
    replace this full path with the full path of where you saved//compiled chakra or any other engine..)
    
-   ^^ adjust killer in a similar manner..
+   ^^ adjust killer cmdline in a similar manner..
    Maybe Needed (idk->1st try w/o adjusting..):
-     ^^ adjust runner.bat (e.g change the code..)
    
    
 to view results:
