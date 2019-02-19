@@ -64,6 +64,11 @@ python dspl.py.
 
 and open crash.log.txt and look for interesting crash's
 
+every once in a while erase crash.log.txt
+replace the content of crash.txt with this:
+set([])
+erase distil directory content ..
+
 have fun ..
 
 
