@@ -96,5 +96,23 @@ have fun
 moz's dharma and ifratic's domato are Licensed (they are provided under the corresponding directorys)
 ^^ Modifications done by me are not part of there original code..
 
+  main changes to domato:
+  
+                a) changed the dictionary for dom fuzzing.
+                
+                b) created (from jscript.txt) a javascript compatible and more extended dictionary.
+                
+                c) the generator create's (for dom fuzzing) a set of 15 files (and adds javascript to 
+                    move beetwin files->so we wont have to launch the program so many times...)
+                    
+                d) the first file consume cpu time (by a js loop that do nothing),
+                    so we can reliably connect a debugger to the right MicrosoftEdgeCp.exe or ie process.
+                
+                
+                
+                
+                
+  
+
 
 
