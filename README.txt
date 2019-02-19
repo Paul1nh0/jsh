@@ -55,7 +55,8 @@ python run.py
    replace this full path with the full path of where you saved//compiled chakra or any other engine..)
    
    ^^ adjust killer in a similar manner..
-   ^^ adjust runner.bat (e.g change the code..)
+   Maybe Needed (idk->1st try w/o adjusting..):
+     ^^ adjust runner.bat (e.g change the code..)
    
    
 to view results:
