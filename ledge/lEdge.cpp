@@ -1,4 +1,6 @@
-// lEdge.cpp : Defines the entry point for the console application.
+// lEdge.cpp : this is used to overcome the error massage from
+// ms windows if for some reason we cannot open edge or ie.
+// ((boo hooo->automating windows is a bitch
 //
 
 #include "stdafx.h"
