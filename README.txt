@@ -4,7 +4,8 @@
 
 
 # JSH - A JavaScript Fuzzing Harness.
-# provided here are examples of usage with domato & dharma,
+# provided here are examples of usage with 
+      domato (a modified version of the first release..) & dharma (both licensed [provided here]),
 # but you can run any generator with this setup.
 # as per my usage this was very stable and fast.
 
@@ -15,11 +16,10 @@ this is mostly implemented for automating windows, but you can change the files 
               you would have to make some changes for this to work but its provided as
               a general guidance)
               
-i used:
+in this setup:
  1) a modified ver of @ifratric domato (that is licensed [provided here]).
  2) a modified ver of @mozillasecurity dharma (that is licensed [provided here]).
  3) some of my own costum generators & mutators.
- 
 
 
 why didn't i use bugid?
