@@ -7,7 +7,7 @@ from subprocess import Popen
 from subprocess import STDOUT, check_output
 import glob
 
-dir = os.getcwd()
+dir_ = os.getcwd()
 
 class Command(object):
     def __init__(self, cmd):
@@ -68,11 +68,11 @@ def log_crash(cmd, f):
 
 while 1:
     for i in range(100):
-        os.system('mkdir '+dir+'\\curpus\\'+str(i))
-        os.chdir(dir+'\\mDomato')
-        os.system('python generator.py --output_dir '+dir+'\\curpus\\'+str(i)+' --no_of_files 15')
+        os.system('mkdir '+dir_+'\\curpus\\'+str(i))
+        os.chdir(dir_+'\\mDomato')
+        os.system('python generator.py --output_dir '+dir_+'\\curpus\\'+str(i)+' --no_of_files 15')
         os.chdir(dir)
-        log_crash('python runner.py '+str(i)+' ',dir+'\\curpus\\'+str(i)+'\\log.txt')
+        log_crash('python runner.py '+str(i)+' ',dir_+'\\curpus\\'+str(i)+'\\log.txt')
         os.system('taskkill /im microsoftedge.exe /f')
     time.sleep(30)
-    os.system('python dist.py '+os.getcwd()+'\\curpus')
+    os.system('python dist.py '+dir_+'\\curpus')
