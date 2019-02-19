@@ -1,11 +1,36 @@
- This is very straightforward:
+# JSF
+a collection of javascript fuzzers and harness.
+this is mostly implemented for automating windows, but there is unix support.
+i used:
+ 1) a modified ver of @ifratric domato (that is licensed).
+ 2) a modified ver of @mozillasecurity dharma (that is licensed).
+ 3) some of my own costum generators & mutators.
  
- change all the paths under automation directory to point to your working path.
- read readme.txt there for fuzzing.
- you should be able to run: 
+# This Project is not maintained!
+# I Will Not answer any issues, or write a proper usage wiki.
+# I am only open sourcing this for the community benefit.
+
+
+This is very straightforward:
+
+download this repo.
+
+go to the automation directory.
+
+choose sc//msedge
+
+sc->javascript fuzzer for shels (see the --use_js_sh=1 argument and other modifications).
+msedge->domato based harness that connects windbg and collects crash repro and asseambly log.
+ 
+change all the paths under automation directory to point to your working path!
+
+read readme.txt (at automation) there for fuzzing.
+
+
+you should be able to run: 
  
  
- python killer.py
+python killer.py
 
 in another cmd:
 
@@ -15,7 +40,7 @@ to view results:
 
 python dspl.py.
 
-and open crash.log.txt
+and open crash.log.txt and look for interesting crash's
 
 have fun ..
 
