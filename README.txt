@@ -20,7 +20,7 @@ usage:
 install windbg..
 install vs runtime from ms..
 change the default web browser for the system to your own..
-change all the directory paths to point to your own (i know its annoying..).
+       you might have to change all the directory paths to point to your own (you might not..).
 install https://github.com/giampaolo/psutil
 additionally (on windows)-> extract psutil (downloaded from above link^^) to the automation\sc 
  (or automation\msedge, whatever your running..)
