@@ -50,6 +50,11 @@ in another cmd:
 
 python run.py
 
+(if you run sc, e.g the js shell then run:
+   python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
+   replace this full path with the full path of where you saved//compiled chakra or any other engine..)
+   
+   
 to view results:
 
 python dspl.py.
