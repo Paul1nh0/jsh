@@ -5,7 +5,9 @@ import shutil, string, random, time
 import subprocess as s
 from subprocess import Popen
 from subprocess import STDOUT, check_output
-import os, glob
+import glob
+
+dir = os.getcwd()
 
 class Command(object):
     def __init__(self, cmd):
@@ -66,11 +68,11 @@ def log_crash(cmd, f):
 
 while 1:
     for i in range(100):
-        os.system('mkdir C:\\Users\\yn\\desktop\\automation\\MsEdge\\curpus\\'+str(i))
-        os.chdir('C:\\Users\\yn\\Desktop\\automation\\MsEdge\\mDomato')
-        os.system('python generator.py --output_dir C:\\Users\\yn\\desktop\\automation\\MsEdge\\curpus\\'+str(i)+' --no_of_files 15')
-        os.chdir('C:\\Users\\yn\\desktop\\automation\\MsEdge')
-        log_crash('python runner.py '+str(i)+' ','C:\\Users\\yn\\desktop\\automation\\MsEdge\\curpus\\'+str(i)+'\\log.txt')
+        os.system('mkdir '+dir+'\\curpus\\'+str(i))
+        os.chdir(dir+'\\mDomato')
+        os.system('python generator.py --output_dir '+dir+'\\curpus\\'+str(i)+' --no_of_files 15')
+        os.chdir(dir)
+        log_crash('python runner.py '+str(i)+' ',dir+'\\curpus\\'+str(i)+'\\log.txt')
         os.system('taskkill /im microsoftedge.exe /f')
     time.sleep(30)
     os.system('python dist.py '+os.getcwd()+'\\curpus')
