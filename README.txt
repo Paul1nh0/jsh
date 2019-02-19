@@ -95,6 +95,8 @@ have fun
 moz's dharma and ifratic's domato are Licensed (they are provided under the corresponding directorys)
 ^^ Modifications done by me are not part of there original code..
 
+modifications that i remember:
+
   main changes to domato:
   
                 a) changed the dictionary for dom fuzzing.
