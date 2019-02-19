@@ -54,6 +54,8 @@ python run.py
    python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
    replace this full path with the full path of where you saved//compiled chakra or any other engine..)
    
+   ^^ adjust killer in a similar manner..
+   
    
 to view results:
 
