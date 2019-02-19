@@ -17,6 +17,7 @@ why didn't i use bugid?
 
 
 usage:
+((more instructions are under /automation directory at this repo..))
 
 install windbg..
 install vs runtime from ms..
