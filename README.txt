@@ -1,3 +1,8 @@
+# This Project is NOT maintained!
+# I Will Not answer any issues, or write a proper usage wiki.
+# I am only open sourcing this for the community benefit.
+
+
 # JSF - A JavaScript Fuzzing Harness.
 # provided here are examples of usage with domato & dharma,
 # but you can run any generator with this setup.
@@ -15,9 +20,7 @@ i used:
  2) a modified ver of @mozillasecurity dharma (that is licensed [provided here]).
  3) some of my own costum generators & mutators.
  
-# This Project is not maintained!
-# I Will Not answer any issues, or write a proper usage wiki.
-# I am only open sourcing this for the community benefit.
+
 
 why didn't i use bugid?
   because this runs faster (less actions and analysis), and i didnt have much resources.
