@@ -72,7 +72,10 @@ replace the content of crash.txt with this:
 set([])
 erase distil directory content ..
 
-have fun ..
+have fun
+
+(p.s: can you slightly modify clean.py to leave only the interesting crash's 
+          in the repro directory ('/distil'))
 
 
 # Note:
