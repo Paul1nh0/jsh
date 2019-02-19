@@ -5,7 +5,9 @@ import shutil, string, random, time
 import subprocess as s
 from subprocess import Popen
 from subprocess import STDOUT, check_output
-import os, glob
+import glob
+
+dir_ = os.getcwd()
 
 class Command(object):
     def __init__(self, cmd):
@@ -66,12 +68,12 @@ def log_crash(cmd, f):
 
 while 1:
     for i in range(100):
-        os.system('mkdir C:\\Users\\akayn\\desktop\\automation\\SC\\curpus\\'+str(i))
-        os.chdir('C:\\Users\\akayn\\Desktop\\automation\\SC\\mDomato\\jscript')
-        os.system('python generator.py --output_dir C:\\Users\\akayn\\Desktop\\automation\\SC\\curpus\\'+str(i)+' --no_of_files 1 --js_sh 1')
-        os.chdir('C:\\Users\\akayn\\desktop\\automation\\SC')
-        log_crash('python runner.py '+sys.argv[-1]+' C:\\Users\\akayn\\desktop\\automation\\SC\\curpus\\'+str(i)+'\\fuzz-0.js',
-                  'C:\\Users\\akayn\\desktop\\automation\\SC\\curpus\\'+str(i)+'\\log.txt')
+        os.system('mkdir '+dir_+'\\curpus\\'+str(i))
+        os.chdir(dir_+'\\mDomato\\jscript')
+        os.system('python generator.py --output_dir '+dir_+'\\curpus\\'+str(i)+' --no_of_files 1 --js_sh 1')
+        os.chdir(dir_)
+        log_crash('python runner.py '+sys.argv[-1]+' '+dir_+'\\curpus\\'+str(i)+'\\fuzz-0.js',
+                  dir_'\\curpus\\'+str(i)+'\\log.txt')
         os.system('taskkill /im '+sys.argv[-1]+' /f')
     time.sleep(30)
     os.system('python dist.py '+os.getcwd()+'\\curpus')
