@@ -12,7 +12,7 @@
 a collection of javascript fuzzers and harness.
 this is mostly implemented for automating windows, but you can change the files needed to the setup under
   the /mutation directory in this repo to support unix.
-      (of download jsf64linux.zip from bin directory->
+      (or download jsf64linux.zip from bin directory->
               you would have to make some changes for this to work but its provided as
               a general guidance)
               
