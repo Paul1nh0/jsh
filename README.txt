@@ -21,6 +21,7 @@ choose sc//msedge
 
 sc->javascript fuzzer for shels (see the --use_js_sh=1 argument and other modifications).
 msedge->domato based harness that connects windbg and collects crash repro and asseambly log.
+  (this is also good for ie, just change the default web browser and the runner.py)
  
 change all the paths under automation directory to point to your working path!
 
