@@ -1,6 +1,7 @@
 # JSF
 a collection of javascript fuzzers and harness.
-this is mostly implemented for automating windows, but there is unix support.
+this is mostly implemented for automating windows, but you can change the files needed to the setup under
+  the /mutation directory in this repo to support unix.
 i used:
  1) a modified ver of @ifratric domato (that is licensed).
  2) a modified ver of @mozillasecurity dharma (that is licensed).
