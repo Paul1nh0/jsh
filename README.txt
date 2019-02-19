@@ -3,7 +3,7 @@
 # I am only open sourcing this for the community benefit.
 
 
-# JSF - A JavaScript Fuzzing Harness.
+# JSH - A JavaScript Fuzzing Harness.
 # provided here are examples of usage with domato & dharma,
 # but you can run any generator with this setup.
 # as per my usage this was very stable and fast.
