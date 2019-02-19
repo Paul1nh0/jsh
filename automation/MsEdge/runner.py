@@ -15,6 +15,8 @@ os.system('lEdge.exe '+dir_+'\\curpus\\'+str(sys.argv[-1])+'\\fuzz-0.html')
 #    if ("edge" in str(line)) or ("Edge" in str(line)):
 #        print line
 
+
+# !! Change MicrosoftEdgeCP.exe to iexplore.exe if u wanna fuzz ie..
 import time
 time.sleep(2)
 pn = [(proc.name(),proc.cpu_percent(interval=1),proc.pid) for proc in psutil.process_iter() if "MicrosoftEdgeCP.exe" in proc.name()]
