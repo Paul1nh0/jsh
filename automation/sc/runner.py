@@ -1,7 +1,6 @@
-import sys
-sys.path.append('C:\\Users\\akayn\\Documents\\runner\\psutil')
+import sys, os
+sys.path.append(os.getcwd()+'\\psutil')
 sys.path.append('C:\\Program Files (x86)\\Windows Kits\\10\\Debuggers\\x64')
-import os
 
 with open("run.bat", mode='w') as bat:
       bat.write("@Echo OFF\n")
