@@ -141,11 +141,8 @@ RUNNING:
          configure that browser to erase history.
       
          install https://github.com/giampaolo/psutil
-      
-         additionally (on windows)-> extract psutil (downloaded from above link^^) to the automation\sc 
-         (or automation\msedge, whatever your running..)
        
-         add python to the systems path..
+         add python to the system's path..
 
          download this repo.
 
@@ -159,8 +156,6 @@ RUNNING:
       
          msedge->domato based harness that connects windbg and collects crash repro and asseambly log.
          (this is also good for ie, just change the default web browser and the runner.py)
- 
-         change all the paths under automation directory to point to your working path!
 
          read readme.txt (at automation) there for fuzzing.
 
