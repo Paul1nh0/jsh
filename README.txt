@@ -160,6 +160,8 @@ modifications that i remember:
                 d) the first file consume cpu time (by a js loop that do nothing),
                     so we can reliably connect a debugger to the right MicrosoftEdgeCp.exe (or ie) child process.
                     
+                    ((not used on MacOs and linux because of no windbg usage..))
+                    
                 e) patched domato generator script to handle macos file system better..
                     
                     
