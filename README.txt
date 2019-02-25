@@ -28,7 +28,9 @@ INTRODUCTION:
                         it's an extended version that supports much more features of the js lang 
                         syntax .. ))
       
-            * some of my own costum generators, mutators & dictionaries.
+      * some of my own costum generators, mutators & dictionaries.
+      
+      * an experimental ( and dysfunctional atm javascript pdf fuzzer ) under the /experimental directory ..
       
       # makes use of the psutil python module ((only on windows)) (that is licensed [not provided here]).
 
