@@ -117,6 +117,9 @@ modifications that i remember:
                     
  if you use this setup then see that you keep the license provided with dharma & domato & psutil.
  my own code is not licensed and you can do whatever you like..
+ 
+ also provided here:
+ som e extra dictionary's including webgl
                 
                 
                 
