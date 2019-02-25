@@ -105,14 +105,22 @@ RUNNING:
 
          recommended: disable windows defender anti-virus, for better performance.
          Run Only inside a virtual machine!!
-    
+         
+         recommended: download https://github.com/processhacker/processhacker
+         and see that the debugger is attached to the right MicrosoftEdgeCp | iexplore process (it would be
+         colored in pink) you can see that its the good process by the cpu load when it navigate
+         from one sample to another .. (do this only on first run after that this can be left
+         unattended).
+         
          ((more instructions are under /automation directory at this repo..))
 
          install windbg..
       
          install vs runtime from ms..
       
-         change the default web browser for the system to your own..
+         change the default web browser for the system to the one you want to fuzz.
+         
+         configure that browser to erase history.
       
          install https://github.com/giampaolo/psutil
       
