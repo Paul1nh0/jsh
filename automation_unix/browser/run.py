@@ -90,7 +90,7 @@ while 1:
         else:
             # we skip the first one because it contains the 'nothing' loop and
             # thats not interesting on unix like systems because of asan usage ..
-            for i in log_crash('./'+sys.argv[-2]+' '+os.path.abspath(dir_+'/curpus/'+str(i)+'/fuzz-1.html'),i):pass
+            for i in log_crash('./'+sys.argv[-2]+'.app/Contents/MacOS/'+sys.argv[-2]+' '+os.path.abspath(dir_+'/curpus/'+str(i)+'/fuzz-1.html'),i):pass
 
         os.chdir(dir_)
     
