@@ -58,6 +58,7 @@ RUNNING:
 
 
       << MACOS >>
+      ((use /automation_unix))
       
       (exampled here chromium-asan):
 
@@ -84,7 +85,11 @@ RUNNING:
                   python killer.py d8
 
 
+
+
+
       << LINUX >>
+      ((use /automation_unix))
       
       (exampled here chromium-asan):
 
@@ -111,7 +116,8 @@ RUNNING:
 
               
       << WINDOWS >>
-
+      ((use /automation))
+      
          recommended: disable windows defender anti-virus, for better performance
          and Run Only inside a virtual machine !!
          
