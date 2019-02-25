@@ -1,4 +1,6 @@
 
+INTRODUCTION:
+
       # jsh - A JavaScript Fuzzing Harness.
       ((and a collection of other useful resources))
 
@@ -8,43 +10,48 @@
       
       my setup was a lot of virtual machines running one thread (for dom),
       and several for js shells..
-
-
-
-# provided here are examples of usage with:
-
-      * domato (a modified version of the first release..) & dharma (both licensed [provided here])
       
-            ((but you can run any generator | mutator with this setup.))
+      ((( i know that the code is ugly and i know that there might be better solutions,
+            but as per my experience i got some really good results )))
+            
+
+
+      # provided here are examples of usage with:
+
+            * domato (a modified version of the first release..) & dharma (both licensed [provided here])
       
-      * some of my own costum generators, mutators & dictionaries.
+                  ((but you can run any generator | mutator with this setup.))
       
-# makes use of the psutil python module ((only on windows)) (that is licensed [not provided here]).
+            * some of my own costum generators, mutators & dictionaries.
+      
+      # makes use of the psutil python module ((only on windows)) (that is licensed [not provided here]).
 
-# as per my usage this was very stable and fast.
+      # as per my usage this was very stable and fast.
 
-why didn't i use bugid or something from mozilla or some other open source stuff?
+      why didn't i use bugid or something from mozilla or some other open source stuff?
 
-  * because i wanted something that would fit my needs..
+            * because i wanted something that would fit my needs..
   
-  * because this runs faster (less actions and analysis), and i didnt have much resources.
+            * because this runs faster (less actions and analysis), and i didnt have much resources.
   
-  * its very easy to see that a crash is not exploitable (null ptr assertion etc) directlly from asseambly..
+            * its very easy to see that a crash is not exploitable (null ptr assertion etc) directlly from asseambly..
   
 
-this was mostly implemented for automating windows ((i know its hard to believe..)), 
-but linux (and macos) support is provided as well 
-( under the /automation_unix directory ).
+      this was mostly implemented for automating windows ((i know its hard to believe..)), 
+      but linux (and macos) support is provided as well 
+      ( under the /automation_unix directory ).
 
 
-the /mutation directory is my own js mutator, its not documented but you can read the code to
-modify it for your needs.
+      the /mutation directory is my own js mutator, its not documented but you can read the code to
+      modify it for your needs.
+
+
 
 RUNNING:
 
 
-<< MACOS >>
-(exampled here chromium-asan):
+      << MACOS >>
+      (exampled here chromium-asan):
 
       for any other web browser see the content of 'somebrowser.app' and adjust the 
       file run.py (where its commented..) to launch the application:
@@ -58,7 +65,7 @@ RUNNING:
                   python killer.py Chromium
 
 
-     or for js:
+       or for js:
 
             on one terminal:
 
@@ -69,8 +76,8 @@ RUNNING:
                   python killer.py d8
 
 
-<< LINUX >>
-(exampled here chromium-asan):
+      << LINUX >>
+      (exampled here chromium-asan):
 
             on one terminal:
 
@@ -80,7 +87,7 @@ RUNNING:
 
                   python killer.py chrome
 
-      or for js:
+         or for js:
 
             on one terminal:
 
@@ -94,58 +101,58 @@ RUNNING:
 
 
               
-<< WINDOWS >>
+      << WINDOWS >>
 
-    recommended: disable windows defender anti-virus, for better performance.
-    Run Only inside a virtual machine!!
+         recommended: disable windows defender anti-virus, for better performance.
+         Run Only inside a virtual machine!!
     
-    ((more instructions are under /automation directory at this repo..))
+         ((more instructions are under /automation directory at this repo..))
 
-      install windbg..
+         install windbg..
       
-      install vs runtime from ms..
+         install vs runtime from ms..
       
-      change the default web browser for the system to your own..
+         change the default web browser for the system to your own..
       
-      install https://github.com/giampaolo/psutil
+         install https://github.com/giampaolo/psutil
       
-      additionally (on windows)-> extract psutil (downloaded from above link^^) to the automation\sc 
-       (or automation\msedge, whatever your running..)
+         additionally (on windows)-> extract psutil (downloaded from above link^^) to the automation\sc 
+         (or automation\msedge, whatever your running..)
        
-      add python to the systems path..
+         add python to the systems path..
 
-      download this repo.
+         download this repo.
 
-      go to the automation directory.
+         go to the automation directory.
 
-      choose sc | msedge
+         choose sc | msedge
       
-      open some cmd's.
+         open some cmd's.
 
-      sc->javascript fuzzer for shells (see the --use_js_sh=1 argument and other modifications).
+         sc->javascript fuzzer for shells (see the --use_js_sh=1 argument and other modifications).
       
-      msedge->domato based harness that connects windbg and collects crash repro and asseambly log.
-      (this is also good for ie, just change the default web browser and the runner.py)
+         msedge->domato based harness that connects windbg and collects crash repro and asseambly log.
+         (this is also good for ie, just change the default web browser and the runner.py)
  
-      change all the paths under automation directory to point to your working path!
+         change all the paths under automation directory to point to your working path!
 
-      read readme.txt (at automation) there for fuzzing.
+         read readme.txt (at automation) there for fuzzing.
 
 
-      you should be able to run: 
+         you should be able to run: 
  
  
             python killer.py
 
-       in another cmd:
+         in another cmd:
 
             python run.py
 
-     (if you run sc, e.g the js shell then run:
+         (if you run sc, e.g the js shell then run:
             python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
             replace this full path with the full path of where you saved//compiled chakra or any other engine..)
    
-      ^^ adjust killer.py cmdline in a similar manner..
+         ^^ adjust killer.py cmdline in a similar manner..
       
       
 
@@ -166,24 +173,25 @@ TO VIEW RESULTS:
            erase distil directory content ..
 
 
+NOTES:
 
-if you are dom fuzzing then the fuzzer would clean the output and save the reproducing cases and the windbg output to
-the /maybe_exploitable directory.
-the repro cases are saved as a pack of 15 files (0->14) so check every single one (by connecting a debugger
-to the program and comparing the asseambly crashing instruction written at the log.txt to the output of the debugger).
+      if you are dom fuzzing then the fuzzer would clean the output and save the reproducing cases and the windbg output to
+      the /maybe_exploitable directory.
+      the repro cases are saved as a pack of 15 files (0->14) so check every single one (by connecting a debugger
+      to the program and comparing the asseambly crashing instruction written at the log.txt to the output of the debugger).
 
-the js shell fuzzing would not clean the crash cases because they are much more rare.
-but you can clean the directory manually: python clean.py distil
+      the js shell fuzzing would not clean the crash cases because they are much more rare.
+      but you can clean the directory manually: python clean.py distil
 
 
+FINAL NOTES:
 
-# Note:
-moz's dharma and ifratic's domato are Licensed (they are provided under the corresponding directorys)
-^^ Modifications done by me are not part of there original code..
+      moz's dharma and ifratic's domato are Licensed (they are provided under the corresponding directorys)
+      ^^ Modifications done by me are not part of there original code..
 
-modifications that i remember:
+      modifications that i remember:
 
-  main changes to domato:
+            main changes to domato:
   
                 a) changed the dictionary for dom fuzzing.
                 
@@ -200,11 +208,11 @@ modifications that i remember:
                 e) patched domato generator script to handle macos file system better..
                     
                     
- if you use this setup then see that you keep the license provided with dharma & domato & psutil.
- my own code is not licensed and you can do whatever you like..
+      if you use this setup then see that you keep the license provided with dharma & domato & psutil.
+      my own code is not licensed and you can do whatever you like..
  
- also provided here:
- som e extra dictionary's including webgl
+      also provided here:
+      some extra dictionary's including webgl
  
  
  HAVE FUN AND PROFIT!                
