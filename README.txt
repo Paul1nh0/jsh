@@ -21,6 +21,10 @@ INTRODUCTION:
             * domato (a modified version of the first release..) & dharma (both licensed [provided here])
       
                   ((but you can run any generator | mutator with this setup.))
+                  
+                  (( under sc | js the files are still named jscript but its not the same thing
+                        it's an extended version that supports much more features of the js lang 
+                        syntax .. ))
       
             * some of my own costum generators, mutators & dictionaries.
       
