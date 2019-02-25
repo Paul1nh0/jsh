@@ -113,6 +113,8 @@ modifications that i remember:
                 d) the first file consume cpu time (by a js loop that do nothing),
                     so we can reliably connect a debugger to the right MicrosoftEdgeCp.exe (or ie) child process.
                     
+                e) patched domato generator script to handle macos file system better..
+                    
                     
  if you use this setup then see that you keep the license provided with dharma & domato & psutil.
  my own code is not licensed and you can do whatever you like..
