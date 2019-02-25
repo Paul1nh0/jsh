@@ -1,6 +1,7 @@
  
 INTRODUCTION:
 
+
       # jsh - A JavaScript Fuzzing Harness.
       ((and a collection of other useful resources))
 
@@ -171,6 +172,12 @@ RUNNING:
             (replace this full path with the full path of where you saved//compiled chakra or any other engine..)
    
          ^^ adjust killer.py cmdline in a similar manner..
+         
+         
+         
+       << ANDROID | IOS >>
+       
+               TODO
       
       
 
