@@ -12,6 +12,8 @@
 a collection of javascript fuzzers and harness.
 this is mostly implemented for automating windows, but linux (and macos) support is provided as well (under the /unix
 directory).
+the /mutation directory is my own js mutator, its not docummented but you can read the code to
+modify it for your needs.
               
 in this setup:
  1) a modified ver of @ifratric domato (that is licensed [provided here]).
