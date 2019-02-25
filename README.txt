@@ -87,8 +87,13 @@ erase distil directory content ..
 
 have fun
 
-(p.s: can you slightly modify clean.py to leave only the interesting crash's 
-          in the repro directory ('/distil'))
+if you are dom fuzzing then the fuzzer would clean the output and save the reproducing cases and the windbg output to
+the /maybe_exploitable directory.
+the repro cases are saved as a pack of 15 files (0->14) so check every single one (by connecting a debugger
+to the program and comparing the asseambly crashing instruction written at the log.txt to the output of the debugger).
+the js shell fuzzing would not clean the crash cases because they are much more rare.
+but you can clean the directory manually: python clean.py distil
+
 
 
 # Note:
