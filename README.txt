@@ -10,11 +10,8 @@
 # as per my usage this was very stable and fast.
 
 a collection of javascript fuzzers and harness.
-this is mostly implemented for automating windows, but you can change the files needed to the setup under
-  the /mutation directory in this repo to support unix.
-      (or download jsf64linux.zip from bin directory->
-              you would have to make some changes for this to work but its provided as
-              a general guidance)
+this is mostly implemented for automating windows, but linux (and macos) support is provided as well (under the /unix
+directory).
               
 in this setup:
  1) a modified ver of @ifratric domato (that is licensed [provided here]).
