@@ -77,7 +77,7 @@ while 1:
         os.chdir(dir_)
         log_crash('python runner.py '+sys.argv[-1]+' '+dir_+'\\curpus\\'+str(i)+'\\fuzz-0.js',
                   dir_+'\\curpus\\'+str(i)+'\\log.txt')
-        os.system('taskkill /im '+sys.argv[-1]+' /f')
+        #os.system('taskkill /im '+sys.argv[-1]+' /f')
     time.sleep(30)
     os.system('python dist.py '+os.getcwd()+'\\curpus')
     
