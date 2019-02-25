@@ -165,22 +165,22 @@ RUNNING:
          read readme.txt (at automation) there for fuzzing.
 
 
-         you should be able to run: 
+           you should be able to run: 
  
  
-            python killer.py
+              python killer.py
 
-         in another cmd:
+           in another cmd:
 
-            python run.py
+              python run.py
 
-   if you run sc, e.g the js shell then run:
+           if you run sc, e.g the js shell then run:
          
-            python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
+              python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
             
-            (replace this full path with the full path of where you saved//compiled chakra or any other engine..)
+              (replace this full path with the full path of where you saved//compiled chakra or any other engine..)
    
-         ^^ adjust killer.py cmdline in a similar manner..
+               ^^ adjust killer.py cmdline in a similar manner..
          
          
          
