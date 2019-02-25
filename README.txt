@@ -5,6 +5,9 @@
       # This Project is NOT maintained!
       # I Will Not answer any issues, or write any proper usage wiki other then this readme file.
       # I am only open sourcing this for the community benefit.
+      
+      my setup was a lot of virtual machines running one thread (for dom),
+      and several for js shells..
 
 
 
