@@ -82,5 +82,6 @@ while 1:
     os.system('python dist.py '+dir_+'\\curpus')
     if limit == 15:
         os.system('python clean.py '+dir_+'\\distil')
+        limit = 0
         
  
