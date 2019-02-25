@@ -66,7 +66,10 @@ def log_crash(cmd, f):
                 log.write(str(o)+'\n'+str(er))
         print 'crash log writen to '+f
 
+#limit = 0    
+        
 while 1:
+    #limit += 1
     for i in range(100):
         os.system('mkdir '+dir_+'\\curpus\\'+str(i))
         os.chdir(dir_+'\\mDomato\\jscript')
@@ -77,3 +80,12 @@ while 1:
         os.system('taskkill /im '+sys.argv[-1]+' /f')
     time.sleep(30)
     os.system('python dist.py '+os.getcwd()+'\\curpus')
+    
+    # this is marked out because we get much less crash's with javascript shell fuzzing ..
+    #if limit == 15:
+    #    os.system('python clean.py '+dir_+'\\distil')
+    #    limit = 0    
+    
+    
+    
+    
