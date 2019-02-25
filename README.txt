@@ -12,6 +12,10 @@
 a collection of javascript fuzzers and harness.
 this is mostly implemented for automating windows, but linux (and macos) support is provided as well (under the /unix
 directory).
+
+to use on macos you would have to download an asan build of the browser and set it as the defult browser.
+for js engine fuzzing directly its not needed..
+
 the /mutation directory is my own js mutator, its not docummented but you can read the code to
 modify it for your needs.
               
