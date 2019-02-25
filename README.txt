@@ -32,9 +32,11 @@ INTRODUCTION:
 
             * because i wanted something that would fit my needs..
   
-            * because this runs faster (less actions and analysis), and i didnt have much resources.
+            * because this runs very fast (less actions and almost zero analysis (just enough i'd like to say), 
+              and i didn't have much resources.
   
-            * its very easy to see that a crash is not exploitable (null ptr assertion etc) directlly from asseambly..
+            * imho its very easy to see that a crash is not exploitable (null ptr assertion etc) 
+              directlly from asseambly..
   
 
       this was mostly implemented for automating windows ((i know its hard to believe..)), 
@@ -51,6 +53,7 @@ RUNNING:
 
 
       << MACOS >>
+      
       (exampled here chromium-asan):
 
       for any other web browser see the content of 'somebrowser.app' and adjust the 
@@ -77,6 +80,7 @@ RUNNING:
 
 
       << LINUX >>
+      
       (exampled here chromium-asan):
 
             on one terminal:
@@ -103,8 +107,8 @@ RUNNING:
               
       << WINDOWS >>
 
-         recommended: disable windows defender anti-virus, for better performance.
-         Run Only inside a virtual machine!!
+         recommended: disable windows defender anti-virus, for better performance
+         and Run Only inside a virtual machine !!
          
          recommended: download https://github.com/processhacker/processhacker
          and see that the debugger is attached to the right MicrosoftEdgeCp | iexplore process (it would be
@@ -156,9 +160,11 @@ RUNNING:
 
             python run.py
 
-         (if you run sc, e.g the js shell then run:
+   if you run sc, e.g the js shell then run:
+         
             python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
-            replace this full path with the full path of where you saved//compiled chakra or any other engine..)
+            
+            (replace this full path with the full path of where you saved//compiled chakra or any other engine..)
    
          ^^ adjust killer.py cmdline in a similar manner..
       
