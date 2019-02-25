@@ -17,22 +17,47 @@ to use on macos you would have to run the program as such (exampled here chromiu
 
       for any other web browser see the content of 'somebrowser.app' and adjust the commandline at
       run.py to launch the application):
+      
+            on one terminal:
 
-python run.py Chromium /fullpath/to/asan/directory
+                  python run.py Chromium /fullpath/to/asan/directory
 
-or for js:
+            on another:
 
-python run.py d8 /fullpath/to/asan/directory
+                  python killer.py Chromium
 
 
+     or for js:
 
-to use on linux (exampled here chromium-asan):
+            on one terminal:
 
-python run.py chrome /fullpath/to/asan/directory
+                  python run.py d8 /fullpath/to/asan/directory
 
-or for js:
+            on another:
 
-python run.py d8 /fullpath/to/asan/directory
+                  python killer.py d8
+
+      to use on linux (exampled here chromium-asan):
+
+            on one terminal:
+
+                  python run.py chrome /fullpath/to/asan/directory
+
+            on another:
+
+                  python killer.py chrome
+
+      or for js:
+
+            on one terminal:
+
+                  python run.py d8 /fullpath/to/asan/directory
+
+            on another:
+
+                  python killer.py d8
+                  
+                  
 
 the /mutation directory is my own js mutator, its not docummented but you can read the code to
 modify it for your needs.
