@@ -66,7 +66,7 @@ RUNNING:
                   python killer.py d8
 
 
-<< linux >>
+<< LINUX >>
 (exampled here chromium-asan):
 
             on one terminal:
