@@ -84,8 +84,12 @@ while 1:
         
         if 'Dar' in platform.system():
             if sys.argv[-2] == 'Chromium':
+                
+                # this works..
                 for i in log_crash('./'+sys.argv[-2]+'.app/Contents/MacOS/Chromium --no-sandbox '+os.path.abspath(dir_+'/curpus/'+str(i)+'/fuzz-1.html'),i):pass
             else:
+                
+                # this might not ..
                 for i in log_crash('./'+sys.argv[-2]+' '+os.path.abspath(dir_+'/curpus/'+str(i)+'/fuzz-1.html'),i):pass
         else:
             # we skip the first one because it contains the 'nothing' loop and
