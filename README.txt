@@ -13,7 +13,14 @@ a collection of javascript fuzzers and harness.
 this is mostly implemented for automating windows, but linux (and macos) support is provided as well (under the /unix
 directory).
 
-to use on macos you would have to download an asan build of the browser and set it as the defult browser.
+to use on macos (or linux) you would have to run the program as such (exampled here is dom fuzzing for chromium):
+
+python run.py Chromium /fullpath/to/asan/directory
+
+or for js:
+
+python run.py d8 /fullpath/to/asan/directory
+
 for js engine fuzzing directly its not needed..
 
 the /mutation directory is my own js mutator, its not docummented but you can read the code to
