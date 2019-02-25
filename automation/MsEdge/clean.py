@@ -122,7 +122,7 @@ for t in col.keys():
 
 #www = raw_input(' ..')
 
-dupl = get_files(os.getcwd()+'\\v')
+dupl = get_files(os.getcwd()+'\\maybe_exploitable')
 dpl = " ".join(dupl.keys())
 
 numbers = []
@@ -166,13 +166,13 @@ def finish(li):
             dst = dst.replace(cc,'_')
         rdst = os.getcwd()
         dst += id_generator(size=6)
-        rdst += '\\v\\' + dst
+        rdst += '\\maybe_exploitable\\' + dst
         try:
             shutil.copytree(os.getcwd()+'\\'+w[0], rdst, symlinks=False, ignore=None)
             shutil.rmtree(os.getcwd()+'\\'+w[0])
         except:
             rdst = os.getcwd()
-            rdst += '\\v\\' + id_generator(size=8)
+            rdst += '\\maybe_exploitable\\' + id_generator(size=8)
             shutil.copytree(w[0], rdst, symlinks=False, ignore=None)
             shutil.rmtree(os.getcwd()+'\\'+w[0])
 
