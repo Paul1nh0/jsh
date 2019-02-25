@@ -1,22 +1,50 @@
-# This Project is NOT maintained!
-# I Will Not answer any issues, or write a proper usage wiki.
-# I am only open sourcing this for the community benefit.
+
+      # jsh - A JavaScript Fuzzing Harness.
+      ((and a collection of other useful resources))
+
+      # This Project is NOT maintained!
+      # I Will Not answer any issues, or write any proper usage wiki other then this readme file.
+      # I am only open sourcing this for the community benefit.
 
 
-# JSH - A JavaScript Fuzzing Harness.
-# provided here are examples of usage with 
-      domato (a modified version of the first release..) & dharma (both licensed [provided here]),
-# but you can run any generator with this setup.
+
+# provided here are examples of usage with:
+
+      * domato (a modified version of the first release..) & dharma (both licensed [provided here])
+      
+            ((but you can run any generator | mutator with this setup.))
+      
+      * some of my own costum generators, mutators & dictionaries.
+      
+# makes use of the psutil python module ((only on windows)) (that is licensed [not provided here]).
+
 # as per my usage this was very stable and fast.
 
-a collection of javascript fuzzers and harness.
-this is mostly implemented for automating windows, but linux (and macos) support is provided as well (under the /unix
-directory).
+why didn't i use bugid or something from mozilla or some other open source stuff?
 
-to use on macos you would have to run the program as such (exampled here chromium-asan):
+  * because i wanted something that would fit my needs..
+  
+  * because this runs faster (less actions and analysis), and i didnt have much resources.
+  
+  * its very easy to see that a crash is not exploitable (null ptr assertion etc) directlly from asseambly..
+  
 
-      for any other web browser see the content of 'somebrowser.app' and adjust the commandline at
-      run.py to launch the application):
+this was mostly implemented for automating windows ((i know its hard to believe..)), 
+but linux (and macos) support is provided as well 
+( under the /automation_unix directory ).
+
+
+the /mutation directory is my own js mutator, its not documented but you can read the code to
+modify it for your needs.
+
+RUNNING:
+
+
+<< MACOS >>
+(exampled here chromium-asan):
+
+      for any other web browser see the content of 'somebrowser.app' and adjust the 
+      file run.py (where its commented..) to launch the application:
       
             on one terminal:
 
@@ -37,7 +65,9 @@ to use on macos you would have to run the program as such (exampled here chromiu
 
                   python killer.py d8
 
-      to use on linux (exampled here chromium-asan):
+
+<< linux >>
+(exampled here chromium-asan):
 
             on one terminal:
 
@@ -59,84 +89,86 @@ to use on macos you would have to run the program as such (exampled here chromiu
                   
                   
 
-the /mutation directory is my own js mutator, its not docummented but you can read the code to
-modify it for your needs.
+
               
-in this setup:
- 1) a modified ver of @ifratric domato (that is licensed [provided here]).
- 2) a modified ver of @mozillasecurity dharma (that is licensed [provided here]).
- 3) some of my own costum generators & mutators.
- 4) makes use of psutil python module (that is licensed [not provided here]).
-
-
-why didn't i use bugid?
-  because this runs faster (less actions and analysis), and i didnt have much resources.
-  its very easy to see that a crash is not exploitable (null ptr assertion etc) directlly from asseambly..
-
-
-usage:
+<< WINDOWS >>
 
     recommended: disable windows defender anti-virus, for better performance.
     Run Only inside a virtual machine!!
+    
     ((more instructions are under /automation directory at this repo..))
 
-install windbg..
-install vs runtime from ms..
-change the default web browser for the system to your own..
-       you might have to change all the directory paths to point to your own (you might not..).
-install https://github.com/giampaolo/psutil
-additionally (on windows)-> extract psutil (downloaded from above link^^) to the automation\sc 
- (or automation\msedge, whatever your running..)
+      install windbg..
+      
+      install vs runtime from ms..
+      
+      change the default web browser for the system to your own..
+      
+      install https://github.com/giampaolo/psutil
+      
+      additionally (on windows)-> extract psutil (downloaded from above link^^) to the automation\sc 
+       (or automation\msedge, whatever your running..)
+       
+      add python to the systems path..
 
-download this repo.
+      download this repo.
 
-go to the automation directory.
+      go to the automation directory.
 
-choose sc//msedge
-open some cmd's.
+      choose sc | msedge
+      
+      open some cmd's.
 
-sc->javascript fuzzer for shells (see the --use_js_sh=1 argument and other modifications).
-msedge->domato based harness that connects windbg and collects crash repro and asseambly log.
-  (this is also good for ie, just change the default web browser and the runner.py)
+      sc->javascript fuzzer for shells (see the --use_js_sh=1 argument and other modifications).
+      
+      msedge->domato based harness that connects windbg and collects crash repro and asseambly log.
+      (this is also good for ie, just change the default web browser and the runner.py)
  
-change all the paths under automation directory to point to your working path!
+      change all the paths under automation directory to point to your working path!
 
-read readme.txt (at automation) there for fuzzing.
+      read readme.txt (at automation) there for fuzzing.
 
 
-you should be able to run: 
+      you should be able to run: 
  
  
-python killer.py
+            python killer.py
 
-in another cmd:
+       in another cmd:
 
-python run.py
+            python run.py
 
-(if you run sc, e.g the js shell then run:
-   python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
-   replace this full path with the full path of where you saved//compiled chakra or any other engine..)
+     (if you run sc, e.g the js shell then run:
+            python run.py C:\Users\akayn\Desktop\jssh\chakra\cc_windows_1_7_5\x64_release\ch.exe
+            replace this full path with the full path of where you saved//compiled chakra or any other engine..)
    
-   ^^ adjust killer.py cmdline in a similar manner..
+      ^^ adjust killer.py cmdline in a similar manner..
+      
+      
+
+
    
-   
-to view results:
+TO VIEW RESULTS:
 
-python dspl.py.
+           python dspl.py.
 
-and open crash.log.txt and look for interesting crash's
+           and open crash.log.txt and look for interesting crash's
 
-every once in a while erase crash.log.txt
-replace the content of crash.txt with this:
-set([])
-erase distil directory content ..
+           every once in a while erase crash.log.txt
+           
+           replace the content of crash.txt with this:
+           
+           set([])
 
-have fun
+           erase distil directory content ..
+
+
 
 if you are dom fuzzing then the fuzzer would clean the output and save the reproducing cases and the windbg output to
 the /maybe_exploitable directory.
 the repro cases are saved as a pack of 15 files (0->14) so check every single one (by connecting a debugger
 to the program and comparing the asseambly crashing instruction written at the log.txt to the output of the debugger).
+
 the js shell fuzzing would not clean the crash cases because they are much more rare.
 but you can clean the directory manually: python clean.py distil
 
@@ -170,7 +202,9 @@ modifications that i remember:
  
  also provided here:
  som e extra dictionary's including webgl
-                
+ 
+ 
+ HAVE FUN AND PROFIT!                
                 
                 
                 
