@@ -65,8 +65,12 @@ def log_crash(cmd, f):
         with open(f, 'w') as log:
                 log.write(str(o)+'\n'+str(er))
         print 'crash log writen to '+f
+        
+        
+limit = 0
 
 while 1:
+    limit +=1
     for i in range(100):
         os.system('mkdir '+dir_+'\\curpus\\'+str(i))
         os.chdir(dir_+'\\mDomato')
@@ -76,3 +80,7 @@ while 1:
         os.system('taskkill /im microsoftedge.exe /f')
     time.sleep(30)
     os.system('python dist.py '+dir_+'\\curpus')
+    if limit == 15:
+        os.system('python clean.py '+dir_+'\\distil')
+        
+ 
